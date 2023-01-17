@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+* {
+	font-size: 22px;
+	font-family: "Arial", "Microsoft YaHei", "宋体", sans-serif;
+}
+
+#container {
+	padding-left: 30px;
+	padding-right: 10px;
+}
+
+h1#title {
+	text-align: center;
+	font-size: 40px;
+}
+
+h1,h2 {
+	color: #646464;
+}
+
+pre {
+	background-color: #e2e2e2;
+	font-family: Consolas serif;
+	/* font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif; */
+	color: blue;
+}

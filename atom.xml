@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://1507045l.eu.org</id>
+    <title>工具人ya的杂货店</title>
+    <updated>2023-01-17T15:03:50.945Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://1507045l.eu.org"/>
+    <link rel="self" href="https://1507045l.eu.org/atom.xml"/>
+    <subtitle>欢迎来到我的小站，本小站是用于分享同学们的小文章的！</subtitle>
+    <logo>https://1507045l.eu.org/images/avatar.png</logo>
+    <icon>https://1507045l.eu.org/favicon.ico</icon>
+    <rights>All rights reserved 2023, 工具人ya的杂货店</rights>
+    <entry>
+        <title type="html"><![CDATA[如果主题不好看怎么办？]]></title>
+        <id>https://1507045l.eu.org/post/zhu-ti/</id>
+        <link href="https://1507045l.eu.org/post/zhu-ti/">
+        </link>
+        <updated>2022-12-22T07:26:38.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="材料">材料</h1>
+<p><a href="https://gridea.dev/themes">gridea主题页面</a><br>
+一台电脑</p>
+<h1 id="下载心仪主题">下载心仪主题</h1>
+<p>1.选择【这里拿Lemon做例子】<br>
+<img src="https://1507045l.eu.org/post-images/1671696451667.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671752538568.png" alt="" loading="lazy"></p>
+<p>2.安装<br>
+<img src="https://1507045l.eu.org/post-images/1671696465894.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671696475160.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671696479493.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671696483471.png" alt="" loading="lazy"><br>
+【PS：保存失败重新尝试】</p>
+<p>3.完成<br>
+<img src="https://1507045l.eu.org/post-images/1671697688128.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何用github+cloudflare搭建博客（上）]]></title>
+        <id>https://1507045l.eu.org/post/ru-he-yong-githubcloudflare-da-jian-bo-ke-shang/</id>
+        <link href="https://1507045l.eu.org/post/ru-he-yong-githubcloudflare-da-jian-bo-ke-shang/">
+        </link>
+        <updated>2022-12-22T05:00:00.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h1 id="必备材料">必备材料</h1>
+<p>1.Github账号<a href="https://github.com/">【官方链接】</a><br>
+2.cloudflare账号<a href="https://dash.cloudflare.com/">【官方链接】</a><br>
+3.一台电脑</p>
+<h1 id="步骤">步骤</h1>
+<h2 id="新建仓库github">新建仓库<a href="https://github.com/">[Github]</a></h2>
+<p>1.点击<img src="https://1507045l.eu.org/post-images/1671189486937.png" alt="" loading="lazy"><br>
+2.新建参数——<img src="https://1507045l.eu.org/post-images/1671189805635.png" alt="" loading="lazy"><br>
+3.放置文件<img src="https://1507045l.eu.org/post-images/1671189890882.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671190087364.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671190106928.png" alt="" loading="lazy"></p>
+<h3 id="代码">代码</h3>
+<pre><code>&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;p&gt;Hello World&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://1507045l.eu.org/post-images/1671190316184.png" alt="" loading="lazy"></figure>
+<h2 id="cloudflare部分cloudflare">cloudflare部分<a href="https://dash.cloudflare.com/">[cloudflare]</a></h2>
+<p>1.连接到git<br>
+<img src="https://1507045l.eu.org/post-images/1671191296234.png" alt="" loading="lazy"><br>
+2.选择存储库<br>
+<img src="https://1507045l.eu.org/post-images/1671191337200.jpg" alt="" loading="lazy"><br>
+3.设置<br>
+<img src="https://1507045l.eu.org/post-images/1671191345096.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671191351074.png" alt="" loading="lazy"><br>
+4.新建成功！<br>
+<img src="https://1507045l.eu.org/post-images/1671191382806.jpg" alt="" loading="lazy"><br>
+5.访问网站<br>
+<img src="https://1507045l.eu.org/post-images/1671191400823.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671191452242.png" alt="" loading="lazy"></p>
+<h1 id="快问快答">快问快答</h1>
+<p>Q:为什么不直接用github内置的部署功能？<br>
+A:因为当文件过多的时候，会造成无法访问的功能【cloudflare目前还是可以看的，不过不确定之后能不能看】</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何用github+cloudflare搭建博客（下）]]></title>
+        <id>https://1507045l.eu.org/post/ru-he-yong-githubcloudflare-da-jian-bo-ke-xia/</id>
+        <link href="https://1507045l.eu.org/post/ru-he-yong-githubcloudflare-da-jian-bo-ke-xia/">
+        </link>
+        <updated>2022-12-22T04:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="常备工具">常备工具：</h1>
+<h2 id="1一台电脑">1.一台电脑</h2>
+<h2 id="2gridea-软件官网-开源地址">2.gridea <a href="https://gridea.dev/">软件官网</a>  <a href="https://github.com/getgridea/gridea">开源地址</a></h2>
+<h2 id="3之前设置好的详见-如何用githubcloudflare搭建博客上">3.之前设置好的，详见 <a href="/post/ru-he-yong-githubcloudflare-da-jian-bo-ke-shang">如何用github+cloudflare搭建博客（上）</a></h2>
+<h1 id="第一步-注册秘钥">第一步 注册秘钥</h1>
+<p>1.点击“Settings”后往下滑，点击“Developer settings”<br>
+<img src="https://1507045l.eu.org/post-images/1671691047283.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671691051651.png" alt="" loading="lazy"></p>
+<p>2.按照顺序选择<br>
+<img src="https://1507045l.eu.org/post-images/1671691170086.png" alt="" loading="lazy"><br>
+PS:<br>
+如果碰到这个页面，在“输入框”输入你的github账号密码，再来点击“Confirm”<img src="https://1507045l.eu.org/post-images/1671691294389.png" alt="" loading="lazy"></p>
+<p>3.填入信息<br>
+<img src="https://1507045l.eu.org/post-images/1671691607681.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671691617569.png" alt="" loading="lazy"><br>
+然后点击下面的&quot;Generate token&quot;</p>
+<p>4.记住信息<br>
+<img src="https://1507045l.eu.org/post-images/1671691789468.png" alt="" loading="lazy"></p>
+<h1 id="第二步-gridea设置">第二步 Gridea设置</h1>
+<p>1.更改 “ 源文件”<br>
+<img src="https://1507045l.eu.org/post-images/1671693374661.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671693388222.png" alt="" loading="lazy"></p>
+<p>2.导入github仓库数据<br>
+<img src="https://1507045l.eu.org/post-images/1671693423586.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671693430473.png" alt="" loading="lazy"></p>
+<p>3.写文章部分<br>
+<img src="https://1507045l.eu.org/post-images/1671693449474.png" alt="" loading="lazy"><br>
+<img src="https://1507045l.eu.org/post-images/1671693460121.png" alt="" loading="lazy"></p>
+<p>4.提交文章<br>
+<img src="https://1507045l.eu.org/post-images/1671693487108.png" alt="" loading="lazy"><br>
+【PS：如果不成功重复尝试，总有一次成功】</p>
+<p>5.叮咚，成功啦~<br>
+<img src="https://1507045l.eu.org/post-images/1671693625798.png" alt="" loading="lazy"></p>
+<p>QA：<br>
+Q：之后写文章怎么办？<br>
+A：重复第二步的3、4就可以啦<br>
+Q：这个主题我不喜欢，怎么办？<br>
+A：查看我这个 <a href="/post/zhu-ti">如何更改主题</a><br>
+Q：如果我想要一些小小功能怎么办？<br>
+A：之后会统一整理~提前建个文件夹 <a href="/post/bu-chong">补充</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[说家风，话家训]]></title>
+        <id>https://1507045l.eu.org/post/shuo-jia-feng-hua-jia-xun/</id>
+        <link href="https://1507045l.eu.org/post/shuo-jia-feng-hua-jia-xun/">
+        </link>
+        <updated>2022-12-17T09:21:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>传承优良家风，争做时代新人。<br>
+——题记</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>传承优良家风，争做时代新人。<br>
+——题记</p>
+<!-- more -->
+<p>在我书桌的上方，贴着一张金黄色的宣纸，上面总是带着一点几淡淡的墨香，每每正临清晨亦或者正午，一缕缕暖阳透过纱窗，映照在宣纸上，上边几个升大的“上善若水”同下面的小字便像镀了一层金边一般，熠熠生辉，在我的人生长卷里闪闪发光。这便是我家的家训。</p>
+<p>何为家风，何为家训？在这张宣纸刚刚贴上墙时，我便时常跟在妈妈后面追问着。而妈妈也常常语重心长地告诉我：“家有家法，国有国法，而家法也是家训。”“那家风是什么呢？”“我们要遵守家训，才会有好的家风；遵守国法国规，才是一个合格的中国公民。”我也总是知其然而不知其所以为然地点点头。</p>
+<p>而至于我是如何“知其然也知其所以然”的，便说来话长了。</p>
+<p>可若要说起家风，还是得先叙叙我家的家训。家训中写了许许多多通俗易懂的名言警句，时时刻刻提醒着我，教导着我。</p>
+<p>在我印象中，我家中的家训头一次派上用场还是在我懵懵懂懂的孩提之年。一次我在家里玩耍时，失手打破了一个小小的茶杯，看着碎成了八瓣的茶杯，我当即吓的面无血色，最后，我决定——拒不坦白，先静观其变。谁料纸终究包不住火。那天晚饭后，妈妈冲洗茶盘时平白其故地，竟少了一只茶杯。便把我叫了过去，问道：“茶杯是你打碎的吗？”我一时竟张口结舌，无言以对。思来想去，便随口扯了个谎：“是邻家的小花猫干的，我都看到了。”我低了头，心虚地狡辩着。妈妈什么也没有说，走进里屋。取下了一张纸，来到我的面前，我定睛一看，正是那张《上善若水》的家训，我垂下眼睑，不敢看妈妈的脸。我承认了事情的经过。</p>
+<p>那时，妈妈的教导我已忘却了，可家训上的第二十条，妈妈时常教育我的那一条，出自于《韩非子·外储说左上篇》上的：“小信诚则大信立，”却永远的镌刻在了我心里，难以忘怀。</p>
+<p>其实，对于家训给我们生活中带来的影响也是不容小觑的。一个好的家训，必然也会带来好的家风。如同我家的家训一般，它像一把无形的戒尺，时时刻刻丈量着我的行为准则，时刻鞭策着我，激励着我，警醒着我。</p>
+<p>一个好的家风，如同一杯清茶，泛着淡淡的，许久未曾散去的清香；一个好的家训，如同一座灯塔，点亮我们的新征程；一个好的家训，如同黑暗中的一双无形的手，将我们引上正确的前行的道路……</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[那条充落阳光与坎坷的路]]></title>
+        <id>https://1507045l.eu.org/post/na-tiao-chong-luo-yang-guang-yu-kan-ke-de-lu/</id>
+        <link href="https://1507045l.eu.org/post/na-tiao-chong-luo-yang-guang-yu-kan-ke-de-lu/">
+        </link>
+        <updated>2022-12-17T09:19:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>家是难舍的亲情，是心灵的港湾，是充满了爱与责任的驿站。孩子只有在良好的家庭氛围中成长，才能变得越来越出色。<br>
+——题记</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>家是难舍的亲情，是心灵的港湾，是充满了爱与责任的驿站。孩子只有在良好的家庭氛围中成长，才能变得越来越出色。<br>
+——题记</p>
+<!-- more -->
+<p>“怎么主题还没想好，马上要比赛了。”老师看着干净的稿纸着急地问我，“要不，我放弃吧，不想参加了。”我低声说。</p>
+<p>“不想参加可以，你自己做决定，想好了再来告诉老师。”</p>
+<p>背后响起这句话时，我正一步步挪出办公室。天空黑压压的，不知什么时候已经乌云密布，阴沉极了，几滴豆大的雨点打在我的脸上。回到家后，我把自己关进房间，不想再面对，不想做选择。</p>
+<p>父亲进来了，他感受到房间中的那股低气压，仿佛也要像屋外一样落下雨来。他站着，没有说话。我有些难过，主动开口倾诉：“演讲比赛，我选不出主题。爸，做选择怎么这么难。”父亲坐在我身边，拍拍我：“人生就是要不断做选择呀。想要过得简单，大可以选择舒适的小路；但是想要过得有意义，还是得选择那条虽有坎坷，但总会有阳光的路。有的时候，要紧处也就几步。”我愣了一下，平淡的日子没什么烦恼，但也跳不出舒适圈；不断进步的路上，往往充满困难与坎坷。我恍然大悟，要想成为好的演讲者，就势必要站上更大的舞台。父亲的一句话点醒了我。我想，去选择那条充满阳光与坎坷的路吧！</p>
+<p>我振奋起来，决定演讲的主题就是“人生是一道选择题。”我脑袋回想父亲的话，开始奋笔疾书。两小时后，演讲稿出炉，看向窗外的天空，乌云已经全然消散了。我又仔细读读读演讲稿的结尾，总感觉缺了点什么，于是拿起笔又补充了一句话：选择那条充满阳光和坎坷的路，你的人生才更有意义</p>
+<p>演讲的那一天，我站在后台，看着洒落在我稿子上的阳光，看向通往舞台那充满阳光与坎坷的路。</p>
+<p>家风是一盏明灯，照亮前行的路；家风，是航行的指南针，指引我们前进的方向，好的家风能影响几代人，使个人优秀，家庭和睦，社会和谐。好的家风犹如一杯清茶，为世人敬仰学习，传承千百年经久不衰！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[那份爱心]]></title>
+        <id>https://1507045l.eu.org/post/na-fen-ai-xin/</id>
+        <link href="https://1507045l.eu.org/post/na-fen-ai-xin/">
+        </link>
+        <updated>2022-12-17T09:14:37.000Z</updated>
+        <summary type="html"><![CDATA[<p>那些刻骨铭心的日子，总会在未来的每一天闪闪发光，我们永远向阳而生！<br>
+——题记</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>那些刻骨铭心的日子，总会在未来的每一天闪闪发光，我们永远向阳而生！<br>
+——题记</p>
+<!-- more -->
+<p>如果你是一滴水，你是否滋润了一寸土地？如果你是一线阳光，你是否照亮了一分黑暗？如果你是一颗最小的螺丝钉，你是否永远坚守在你生活的岗位上？你是否在日夜宣扬那美丽的理想？凉风，如丝丝细雨、连绵不断的散发。</p>
+<p>从诸葛亮的“非淡泊无以明志，非宁静无以致远。”再到“无规矩不成方圆”家永久传承。</p>
+<p>一天晚上，刚放学回家的我拖着疲惫不堪的身体重重的坐了下来，气喘吁吁着。这时候，父亲走了进来，坐在椅上吸了一口气，抽起手机在那左右为难，我很是好奇，恨不得把整个脑袋都凑过去瞧瞧。正当我准备行动时，母亲径直走了进来立马被父亲手机中的消息吸引了注意，坐在身旁。突有一种强大的力量在驱使着我的好奇心向前走........</p>
+<p>“我一个工友发了一条朋友圈，上面写着妻子身患癌症，我就给他们捐了些钱”父亲心事重重地说着，令人感到氛围一下子变得紧张阴森那是一幅有感染力的神态。“你能确定他发的是真的吗。”母亲半信半疑的盯着父亲。父亲竖起食指放在屏幕上把那一行的字一个个划出来说：“不会骗人，这里都指名到信了。”父亲一脸无奈尴尬的氛围被一声音打破......</p>
+<p>“那万一是假的呢，你还未知情况，擅自下结论，未免太匆忙，还会痛失这些钱！”我的表情愤怒起来，不解与不满，怒气涌上心头，我真的很不理解父亲的这援手。我走向父亲旁边看到了一共捐献七次共记二百元。我恼羞成怒、不平。对这一切的到来感到手足无措。</p>
+<p>父亲望了我的表情，态度却极其温和。他把我叫过来，起初有些不情愿后来想了想还是过去了。“你看，这是我的工友，他这里写到我是他的一个亲人患有癌症，人人平等，而不要做一个冷酷无情的禽兽，如果可以，贡献出自己的一份爱心，那也只是一个小小的举动，但对他们来所用处却很大，这是他们最无助的时刻，就比如当别人需要帮助时，付出自己的爱心，无论大小，自愿承担责任，是值得的，如果我们是他们，我们一定也会渴望得到希望。”父亲唠叨许久，但句句都使我在心中烙下了深深的印痕。我刚还想在说什么，他便示意我陪下。</p>
+<p>我静呆呆的站在原地，他说：“不管那是谁，我们都要牢记，只要我们能帮到忙，咱就尽所能去帮，即使渺小又如何？”他说完拿起一旁的碗筷边夹边看手机消息。我呆望地面，那就如我的最后点面子，觉得自己的看法真的好离谱，羞愧的不敢抬头，父亲注意到我的表情，让我坐下好好吃饭，既使桌前米饭不停的诱惑着我，一簇又一簇的香味扑鼻而来，但却怎也拿不起手中的筷子，脑子极力回想刚才的过程。</p>
+<p>父亲说了一句话：“贡献尽能所能的力量，那就是爱心，时时刻刻也不能丢。”</p>
+<p>目光散向大地，透出点点银光，河水静静流淌，夜晚的风缓缓吹进少女的心......</p>
+<p>父亲的那份时时刻刻永不丢失的爱心在鞭策我奋勇前进，有这么一股力量在支持着我途途前行，它，教会我对待事物的看法，感悟很深。</p>
+<p>传承家风，让它贯穿我们生命的每一环节，弘扬积极向善的正能量。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[月光下的村庄]]></title>
+        <id>https://1507045l.eu.org/post/yue-guang-xia-de-cun-zhuang/</id>
+        <link href="https://1507045l.eu.org/post/yue-guang-xia-de-cun-zhuang/">
+        </link>
+        <updated>2022-12-16T09:37:11.000Z</updated>
+        <content type="html"><![CDATA[<p>放暑假了。外号“暖宝宝”的郭明皓坐下了回乡下的车，外号“小问号”的妹妹从小就住在乡下，往年这个时候，郭明皓都会和爸爸妈妈一起回乡下，但今年父母工作太忙，他只好自己回家。</p>
+<p>郭明皓静静地坐在车上，回想着去年寒假时和妹妹玩耍的情景，当时他们约好一起去捉萤火虫，又想起奶奶来信说，妹妹摔伤了腿，怕是不能去了。</p>
+<p>到乡下时村庄已被月光笼罩着。池塘边的萤火虫飞着，像是在逗引着他。到了家，他来到妹妹的房间，看到妹妹腿上打着石膏，不禁心疼极了。“哥，你回来了。”“嗯，你的腿还疼吗？”“已经不疼了，可爷爷说，还不能下床，今年可能不能一起去抓萤火虫了。”这时，爷爷开门：“乖孩子们，先睡觉，有什么事明天说。”</p>
+<p>两人钻到被窝儿里，这时，小问号开口了。</p>
+<p>“哥，你说萤火虫为什么会发光呢？”</p>
+<p>“可能是随身带着小灯笼了吧。”</p>
+<p>“小灯笼里放了什么蜡烛呢？为什么发出的光是绿色的呢？”</p>
+<p>郭明皓答不上来了。</p>
+<p>渐渐地，说话声音小了，妹妹睡着了。</p>
+<p>郭明皓静静地看着她，脑海中又浮现了这么一幅画面：月色迷蒙的村庄下，池塘边的杨树旁，飞了好多萤火虫，绿莹莹的发着光，他和妹妹提着罐子，拿着网子来到池塘边捉萤火虫。他凝视着妹妹，想起了她失落的神情和受伤的腿。“他多想看到萤火虫啊！可是……”郭明皓想着，决定自己去捉只萤火虫。</p>
+<p>他拿着工具，蹑手蹑脚地出了门，来拿池塘边，开始捉了起来。过了一会儿，他捉了一只，可是，手却被杨柳的枝干蹭破了。</p>
+<p>四周起了大雾，萤火虫微弱的光绿莹莹的，像绿宝石一般，天上的月亮在追着他，仿佛在给他指明了道路。<br>
+他回到家时，妹妹已经睡醒了，郭明皓把萤火虫放在他手心里，说道：“这次你没法去，我便先自己去了，明年我们再一起去，捉更多的萤火虫。”“小问号”妹妹什么也没问，只觉得心里像贴了“暖宝宝”一般，暖洋洋的。</p>
+<p>月色依旧笼罩着村庄，池塘边，萤火虫也在默默地飞着，照亮了他们的心，心里也暖洋洋的。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[原来我是一个小偷]]></title>
+        <id>https://1507045l.eu.org/post/yuan-lai-wo-shi-yi-ge-xiao-tou/</id>
+        <link href="https://1507045l.eu.org/post/yuan-lai-wo-shi-yi-ge-xiao-tou/">
+        </link>
+        <updated>2022-12-16T09:35:52.000Z</updated>
+        <content type="html"><![CDATA[<p>那是普通的一天，我回到家里发现妈妈不在家里。我有点失落开始抱怨：“为什么妈妈今天不在家?饭都没有煮！饿死了！以前明明一回到家就可以吃饭，真是的！”</p>
+<p>我极其不耐烦的写起了作业，“小鸟的叫声真是讨厌！”我想。周围渐渐暗了下去，这是们开了。是妈妈，我急忙跑上去质问她：“为什么今天回来的这么晚，我要饿死了！哼！”说完我便跑开了。走时不经看了妈妈一眼。原来她的眼里有那么多红血丝啊，原来，妈妈她早已很疲惫。</p>
+<p>吃饭时我一声不吭，是不是看她几眼。哦！她为什么已经不再爱美了？为什么她不穿喜欢的衣服了？为什么妈妈不说话了？为什么？</p>
+<p>因为我。</p>
+<p>原来是因为我。早上妈妈早早起床给我做早餐，我却说不想吃；妈妈为我做饭，我说“你为什么总是给我夹不好吃的菜？”；妈妈为我洗衣服，我觉得理所当然；妈妈帮我扫房间，我认为理所当然……可是？这些我不能做吗？</p>
+<p>我能。</p>
+<p>我常常认为妈妈为我做这些是应该的。我好像很久没有认真看过她了。岁月的流逝带走了她一半的美丽，家庭琐事带走了他的笑容……</p>
+<p>哦！现在我明白了：原来我才是偷走妈妈青春的小偷……</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我与志愿服务的故事（2）]]></title>
+        <id>https://1507045l.eu.org/post/wo-yu-zhi-yuan-fu-wu-de-gu-shi-2/</id>
+        <link href="https://1507045l.eu.org/post/wo-yu-zhi-yuan-fu-wu-de-gu-shi-2/">
+        </link>
+        <updated>2022-12-16T09:32:16.000Z</updated>
+        <content type="html"><![CDATA[<p>有一种精神叫奉献，有一种责任叫志愿，中华民族拥有五千年的悠久文明和灿烂文化，从“乐喜好施的千年古训到“助人为乐”的雷锋精神，都传递出一种奉献，互助的志愿精神，把自己的”快乐”融入到服务过程中，用自己的微笑和活力感染并帮助他人，这应该就是中国精神。</p>
+<p>这段时间，新冠病毒蔓延，使得各地的人们叫苦不迭。我们的城市得病了！</p>
+<p>在疫情重新来到我们身边时，学校立马发布通知让我们回到家中上网课，并要求我们进行核酸检测和每日打卡。</p>
+<p>昨天，我们一家人去做第二次核酸检测时，发现我们家附近的路口都被封了，听父母说，好像之前有一例新冠在我们周围被发现，吓得我们马上去做核酸检测。</p>
+<p>刚来到核酸检测处，便看到排着长长的一个队。我们也站到了队伍的最后面。</p>
+<p>过了一段时间，终于轮到我们了。而此时好巧不巧，一位同样穿着白色大褂的人来到正在给我们做核酸的人，轻声对她说：“休息一下吧，接下来换我来。”那人却摇了摇头：“没事的，我还能再干一会儿。”在说这句话的时候，我清楚的看到那人的眼里闪着坚毅的光，那一刻我想了很多。</p>
+<p>这些医护人员在我们背后默默奉献着自己的力量，虽然这力量很微弱，但星星之火可以燎原，每一位医护人员的力量汇聚在一起，就形成了一股巨大的力量，那有什么岁月静好，只是有人在负重前行。</p>
+<p>我们国家用了几千年的时间，把团结统一，爱好和平，勤劳勇敢，自强不息等精神凝聚成中国精神，并把中国精神刻入到中国人的骨子里，使中国精神传承下去。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我与志愿服务的故事（1）]]></title>
+        <id>https://1507045l.eu.org/post/wo-yu-zhi-yuan-fu-wu-de-gu-shi-1/</id>
+        <link href="https://1507045l.eu.org/post/wo-yu-zhi-yuan-fu-wu-de-gu-shi-1/">
+        </link>
+        <updated>2022-12-16T09:31:05.000Z</updated>
+        <content type="html"><![CDATA[<p>一提起“志愿服务”这四个字，相信对于很多人来说都不陌生，可这个新鲜的，不同于寻常的词，对于我们当代这些学生来说，是陌生的，是遥远的，甚至是带了几分“奢侈”的。以至于我是怎么在《汉语词典》中小心翼翼地拣出“志愿”这个词的，便说来话长了。</p>
+<p>一次在核酸检测的过程中，几个平凡的，毫不起眼却又令人倍感温暖的身影映入了我的眼里。他们是什么人呢？我不禁暗自思忖，细细地打量着他们：他们没有穿防护服，一律都穿着鲜艳的红色马甲，后背的衣服上写了“青年志愿者”几个大字。一位志愿者转过身来的那一刻，我感到有些吃惊：这位志愿者其貌不扬，脸上的白口罩遮住了脸，却没遮住疲惫的神情和若有若无的笑容，也没能遮住从脸颊上滑落的一滴滴汗水。看到他们忙忙碌碌的身影，在这个冷漠的、人人都只顾着自己的社会，他们犹如一支支蜡烛，燃烧了自己，照亮他人，感动着世界。</p>
+<p>这一次泉州的疫情来势汹汹，疫情防控工作者舍小家顾大家的精神令人敬佩，而那些默默无闻、心中有着大爱的志愿者也令人为之而动容。</p>
+<p>那一次核酸检测过程中，又有许许多多的人化身“抗疫志愿者”队伍中的一员，望着他们被汗水浸湿的脸庞，我不禁想到：在这大千世界里，有你、有我、有他，如果人人心中都充满了爱，都愿意为社会公共利益奉献一份热情，那么，这个世间终将会充满着阳光般的温暖，推动着社会的发展，而我们的祖国也会更加繁荣富强。</p>
+]]></content>
+    </entry>
+</feed>

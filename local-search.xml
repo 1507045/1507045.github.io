@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>第一天</title>
-    <link href="/2024/07/15/%E7%AC%AC%E4%B8%80%E5%A4%A9/"/>
-    <url>/2024/07/15/%E7%AC%AC%E4%B8%80%E5%A4%A9/</url>
+    <title>MC服务器点歌mod——ALLmusic</title>
+    <link href="/2024/07/15/MC%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%82%B9%E6%AD%8Cmod%E2%80%94%E2%80%94ALLmusic/"/>
+    <url>/2024/07/15/MC%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%82%B9%E6%AD%8Cmod%E2%80%94%E2%80%94ALLmusic/</url>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
     
     
     

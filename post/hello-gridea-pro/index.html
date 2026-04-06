@@ -1,27 +1,133 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>念念不忘，必有回响 —— Gridea Pro，我们回来了 | Gridea Pro</title>
-	<link rel="stylesheet" href="/styles/main.css">
-	<style>
-		body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-		.post-header { text-align: center; padding: 40px 0; }
-		.post-title { font-size: 2.5em; margin: 0; }
-		.post-meta { color: #999; margin-top: 10px; }
-		.post-content { margin-top: 40px; }
-		.post-content img { max-width: 100%; height: auto; }
-		.back-link { display: inline-block; margin-top: 40px; color: #0066cc; text-decoration: none; }
-	</style>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>念念不忘，必有回响 —— Gridea Pro，我们回来了 | Gridea Pro</title>
+
+<link rel="shortcut icon" href="https://gjry.eu.org/favicon.ico?v=1775464102">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://gjry.eu.org/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+<meta name="description" content="你好，欢迎来到 Gridea Pro。 如果你正在读这篇文章，说明你已经迈出了最重要的一步——决定拥有一个属于自己的博客。 关于 Gridea Pro 搭建独立博客这件事，在过去一直有个尴尬的矛盾：想写博客的人很多，但现有的工具几乎都是给开发者准备的。Hugo 要你装 Go 环境，在终端跑 hugo new site；">
 </head>
 <body>
-	<article class="post">
-		<header class="post-header">
-			<h1 class="post-title">念念不忘，必有回响 —— Gridea Pro，我们回来了</h1>
-			<div class="post-meta">2026-04-06</div>
-		</header>
-		<div class="post-content"><p>你好，欢迎来到 <strong>Gridea Pro</strong>。</p>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Gridea Pro
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post" class="menu gt-a-link">
+                            博客
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/memos" class="menu gt-a-link">
+                            闪念
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/friends" class="menu gt-a-link">
+                            友链
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1775464102" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    念念不忘，必有回响 —— Gridea Pro，我们回来了
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2026-04-06 ·
+                    </time>
+                    
+                        <a href="/tag/gridea-pro/" class="post-tags">
+                            # Gridea Pro
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>你好，欢迎来到 <strong>Gridea Pro</strong>。</p>
 <p>如果你正在读这篇文章，说明你已经迈出了最重要的一步——决定拥有一个属于自己的博客。</p>
 <!-- more -->
 <h2 id="-gridea-pro">关于 Gridea Pro</h2>
@@ -68,9 +174,57 @@
 <p>有任何问题或建议，欢迎到 <a href="https://github.com/Gridea-Pro/gridea-pro">GitHub</a> 提交 Issue，我们会认真回复每一条反馈。</p>
 <p>祝你写作愉快。</p>
 <p>Enjoy Gridea Pro!</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="/post/quick-start/" class="post-title gt-a-link">
+                    Gridea Pro 完全上手指南 —— 从写作到发布，一篇搞定
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Welcome to Gridea Pro</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by Gridea Pro
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://gjry.eu.org/atom.xml" target="_blank">RSS</a></a>
+    </div>
 </div>
-	</article>
-	<a href="/" class="back-link">← 返回首页</a>
-	<footer style="text-align: center; padding: 40px 0; color: #999;">Powered by Gridea Pro</footer>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
 </body>
 </html>

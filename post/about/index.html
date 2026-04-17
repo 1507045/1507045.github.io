@@ -31,7 +31,7 @@
   
 <meta name="description" content="关于我 e，自我介绍一下，我是一个高一学生，家在泉州，是个死宅，喜欢看番剧和学习编程 以后想要做一名程序员，也是这样我可以考虑把我所思所感所学留在这里 不为了给别人看，只是为了自己能够有所回忆，有机会的话还会写点周记放在这里， 就这样吧~ 关于我的博客 我发现自己想的很多事情，不写下来就会忘。写博客不是为了给别人看，是">
 <link rel="canonical" href="https://gjry.eu.org/post/about/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"关于","url":"https://gjry.eu.org/post/about/","description":"关于我 e，自我介绍一下，我是一个高一学生，家在泉州，是个死宅，喜欢看番剧和学习编程 以后想要做一名程序员，也是这样我可以考虑把我所思所感所学留在这里 不为了给别人看，只是为了自己能够有所回忆，有机会的话还会写点周记放在这里， 就这样吧~ 关于我的博客 我发现自己想的很多事情，不写下来就会忘。写博客不是为了给别人看，是","datePublished":"2026-04-06T15:54:26+08:00","dateModified":"2026-04-12T12:09:48+08:00","author":{"@type":"Person","name":"工具人ya的blog~"},"publisher":{"@type":"Organization","name":"工具人ya的blog~"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"关于","url":"https://gjry.eu.org/post/about/","description":"关于我 e，自我介绍一下，我是一个高一学生，家在泉州，是个死宅，喜欢看番剧和学习编程 以后想要做一名程序员，也是这样我可以考虑把我所思所感所学留在这里 不为了给别人看，只是为了自己能够有所回忆，有机会的话还会写点周记放在这里， 就这样吧~ 关于我的博客 我发现自己想的很多事情，不写下来就会忘。写博客不是为了给别人看，是","datePublished":"2026-04-06T15:54:26+08:00","dateModified":"2026-04-17T21:25:30+08:00","author":{"@type":"Person","name":"工具人ya的blog~"},"publisher":{"@type":"Organization","name":"工具人ya的blog~"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://gjry.eu.org","name":"工具人ya的blog~","position":1},{"@type":"ListItem","item":"https://gjry.eu.org/post/about/","name":"关于","position":2}]}</script>
 <meta property="og:title" content="关于">
 <meta property="og:description" content="关于我 e，自我介绍一下，我是一个高一学生，家在泉州，是个死宅，喜欢看番剧和学习编程 以后想要做一名程序员，也是这样我可以考虑把我所思所感所学留在这里 不为了给别人看，只是为了自己能够有所回忆，有机会的话还会写点周记放在这里， 就这样吧~ 关于我的博客 我发现自己想的很多事情，不写下来就会忘。写博客不是为了给别人看，是">
@@ -77,11 +77,11 @@
         
         <a class="nav-item" href="/post">博客</a>
         
+        <a class="nav-item" href="/memos">闪念</a>
+        
         <a class="nav-item" href="/friends">友链</a>
         
         <a class="nav-item" href="/archives">归档</a>
-        
-        <a class="nav-item" href="/memos">闪念</a>
         
         <a class="nav-item" href="/post/about">关于</a>
         
@@ -172,7 +172,17 @@
 </ul>
 <!-- 改成你自己打算写的方向就好 -->
 <h3 id="heading-3">网站结尾的计时器：</h3>
-<pre><code>&lt;script defer src=&quot;https://cloud.umami.is/script.js&quot; data-website-id=&quot;8c9d58bb-be79-41ec-b5f0-fe26ad2bdf5e&quot;&gt;&lt;/script&gt;
+<pre><code>&lt;!-- 本站运行时间 --&gt;
+&lt;i class=&quot;fa fa-cog fa-spin fa-1x fa-fw&quot;&gt;&lt;/i&gt;&lt;!--动态齿轮图标--&gt;
+&lt;span&gt;本站已运行 &lt;span id=&quot;days&quot; style=&quot;font-weight:800; color:#ED712E;&quot;&gt; &lt;/span&gt; 天&lt;/span&gt;
+&lt;script&gt;
+  let s1 = '2026-4-6';  //设置为你的建站时间
+  s1 = new Date(s1.replace(/-/g, &quot;/&quot;));
+  s2 = new Date();
+  let days = s2.getTime() - s1.getTime();
+  let number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+  document.getElementById('days').innerHTML = number_of_days;
+&lt;/script&gt;
 </code></pre>
 <h3 id="heading-4">找到我</h3>
 <ul>
@@ -209,11 +219,11 @@
       
       <a class="footer-nav__link" href="/post">博客</a>
       
+      <a class="footer-nav__link" href="/memos">闪念</a>
+      
       <a class="footer-nav__link" href="/friends">友链</a>
       
       <a class="footer-nav__link" href="/archives">归档</a>
-      
-      <a class="footer-nav__link" href="/memos">闪念</a>
       
       <a class="footer-nav__link" href="/post/about">关于</a>
       

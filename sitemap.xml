@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://gjry.eu.org/</loc>
-    <lastmod>2026-04-18T20:42:29+08:00</lastmod>
+    <lastmod>2026-04-18T21:40:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://gjry.eu.org/post/why-we-write/</loc>
@@ -11,6 +11,10 @@
   <url>
     <loc>https://gjry.eu.org/post/indie-blog-is-not-dead/</loc>
     <lastmod>2026-04-12T10:40:32+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://gjry.eu.org/post/guan-yu-ban-li-hui-you-ji-ti-xing-de-tao-yan-mou-ge-ren-de-xing-wei-de-gan-xiang/</loc>
+    <lastmod>2026-04-18T21:40:52+08:00</lastmod>
   </url>
   <url>
     <loc>https://gjry.eu.org/post/zhou-ji-2026330202646qing-ming-jie-qi-jian/</loc>
@@ -50,26 +54,30 @@
   </url>
   <url>
     <loc>https://gjry.eu.org/tags/</loc>
-    <lastmod>2026-04-18T20:42:29+08:00</lastmod>
+    <lastmod>2026-04-18T21:40:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://gjry.eu.org/tag/gridea/</loc>
-    <lastmod>2026-04-18T20:42:29+08:00</lastmod>
+    <lastmod>2026-04-18T21:40:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://gjry.eu.org/tag/gridea-pro/</loc>
-    <lastmod>2026-04-18T20:42:29+08:00</lastmod>
+    <lastmod>2026-04-18T21:40:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://gjry.eu.org/tag/getting-started/</loc>
-    <lastmod>2026-04-18T20:42:29+08:00</lastmod>
+    <lastmod>2026-04-18T21:40:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://gjry.eu.org/tag//Weekly_Journal/</loc>
-    <lastmod>2026-04-18T20:42:29+08:00</lastmod>
+    <lastmod>2026-04-18T21:40:54+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://gjry.eu.org/tag/ge-ren-si-kao/</loc>
+    <lastmod>2026-04-18T21:40:54+08:00</lastmod>
   </url>
   <url>
     <loc>https://gjry.eu.org/archives/</loc>
-    <lastmod>2026-04-18T20:42:29+08:00</lastmod>
+    <lastmod>2026-04-18T21:40:54+08:00</lastmod>
   </url>
 </urlset>

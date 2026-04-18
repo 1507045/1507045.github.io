@@ -83,8 +83,6 @@
         
         <a class="nav-item" href="/memos">闪念</a>
         
-        <a class="nav-item" href="/friends">友链</a>
-        
         <a class="nav-item" href="/archives">归档</a>
         
         <a class="nav-item" href="/post/about">关于</a>
@@ -208,6 +206,30 @@
   
 
 
+  
+    <section class="comment-section">
+  <h2 class="comment-section__title">评论</h2>
+  <div id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'Ov23lifULzqpGKgHFZtU',
+      clientSecret: '02609323c8e8353f96bf065ff9b718c56084abbe',
+      repo: '1507045-s_Blog_Review',
+      owner: '1507045',
+      admin: ['1507045'],
+      id: location.pathname,
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  </script>
+</section>
+
+  
+
+
+
 </article>
 
   </main>
@@ -224,8 +246,6 @@
       <a class="footer-nav__link" href="/post">博客</a>
       
       <a class="footer-nav__link" href="/memos">闪念</a>
-      
-      <a class="footer-nav__link" href="/friends">友链</a>
       
       <a class="footer-nav__link" href="/archives">归档</a>
       

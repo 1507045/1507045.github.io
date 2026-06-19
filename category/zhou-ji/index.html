@@ -1,53 +1,79 @@
+
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="auto" class="not-loaded">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="generator" content="Gridea Pro · Liushen Theme">
-  <meta name="generator" content="Gridea Pro 1.2.2">
-  <title> | 工具人ya的blog~</title>
-  <meta name="description" content="Welcome to My Blog">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="工具人ya的blog~">
-  <meta property="og:description" content="Welcome to My Blog">
-  <meta property="og:image" content="/images/avatar.png">
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" type="image/x-icon">
-  <link rel="alternate" type="application/atom+xml" title="工具人ya的blog~" href="/atom.xml">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/styles/main.css">
+    <meta name="generator" content="Gridea Pro 1.2.2">
+    <title> · 分类 · 工具人ya的blog~</title>
 
-  <style id="liushen-theme-vars">
-    :root{
-      --primary:#2679cc;
-      --accent:#00c4b6;
-      --text:rgba(0, 0, 0, 0.86);
-      --card-radius:12px;
-      --body-font:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-      --code-font:Consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', monospace;
-      --sidebar-gradient:linear-gradient(60deg, #ffd7e4 0%, #c8f1ff 100%);
-      --bg-image-light:url('/media/images/bg-light.svg');
-      --bg-image-dark:url('/media/images/bg-dark.svg');
+    
+    
+    <meta name="description" content="">
+    
+
+    
+    <meta property="og:site_name" content="工具人ya的blog~">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    
+    <meta property="og:image" content="/images/avatar.png">
+    
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+
+    
+    
+
+    
+    
+    <link rel="alternate" type="application/atom+xml" title="工具人ya的blog~" href="/atom.xml">
+    
+
+    
+    <link rel="stylesheet" href="/styles/main.css">
+
+    
+    <style>
+    :root {
+      --color-primary: #e53935;
+      --color-primary-hover: #c62828;
+      --container-width: 720px;
+      --font-stack-body: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     }
-  </style>
-  
+    </style>
 
-  <script>
+    
+    <script>
     (function(){
-      var pref="auto";
-      try{var saved=localStorage.getItem('liushen-theme');if(saved)pref=saved;}catch(e){}
-      var resolved=pref;
-      if(pref==='auto'){var h=new Date().getHours();resolved=(h>=6&&h<18)?'light':'dark';}
-      document.documentElement.setAttribute('data-theme',resolved);
-      document.documentElement.dataset.themePref=pref;
+      try {
+        var saved = localStorage.getItem('kehua-theme');
+        var preset = "auto";
+        var theme;
+        if (saved === 'dark' || saved === 'light') {
+          theme = saved;
+        } else if (preset === 'dark' || preset === 'light') {
+          theme = preset;
+        } else {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {}
     })();
-  </script>
+    </script>
 
-  
-  
+    
+    
+    
+
+    
 <meta name="description" content="Welcome to My Blog">
 <link rel="canonical" href="https://gjry.eu.org/category/zhou-ji/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"工具人ya的blog~","url":"https://gjry.eu.org","description":"Welcome to My Blog","potentialAction":{"@type":"SearchAction","query-input":"required name=search_term_string","target":"https://gjry.eu.org/search?q={search_term_string}"}}</script>
@@ -74,640 +100,493 @@
 <meta name="msapplication-TileImage" content="/images/icons/icon-192x192.png">
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
 </head>
-<body class="page-category">
-
-  
-  <div id="reading-progress" aria-hidden="true"><span></span></div>
-  
-
-  <div id="web-bg" aria-hidden="true"></div>
-  <div id="sun-moon-cover" aria-hidden="true"></div>
-
-  
-<div id="mobile-sidebar" class="mobile-sidebar" hidden>
-  <div class="mobile-sidebar-backdrop" data-action="close-mobile-menu"></div>
-  <aside class="mobile-sidebar-panel">
-    <header class="mobile-sidebar-header">
-      <img class="mobile-avatar" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" alt="工具人ya的blog~" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/media/images/default-avatar.svg';">
-      <h3 class="mobile-site-name">工具人ya的blog~</h3>
-      <p class="mobile-tagline">Welcome to My Blog</p>
-    </header>
-    <nav class="mobile-sidebar-nav" id="mobile-nav-list">
-      
-        
-        <a href="/" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>首页</span></a>
-        
-        <a href="/post" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>博客</span></a>
-        
-        <a href="/memos" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>闪念</span></a>
-        
-        <a href="/archives" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>归档</span></a>
-        
-        <a href="/post/about" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>关于</span></a>
-        
-      
-    </nav>
-    <footer class="mobile-sidebar-footer">
-      
-<a class="social-icon" href="mailto:anda123367@gmail.com" title="Email" rel="noopener"><i class="fa-solid fa-envelope"></i></a>
-
-<a class="social-icon" href="https://github.com/1507045" title="GitHub" rel="noopener" target="_blank"><i class="fa-brands fa-github"></i></a>
-
-<a class="social-icon" href="https://space.bilibili.com/524659442" title="哔哩哔哩" rel="noopener" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
-<a class="social-icon" href="/atom.xml" title="RSS" rel="noopener"><i class="fa-solid fa-rss"></i></a>
-
-    </footer>
-  </aside>
-</div>
-
-  
-<nav id="nav" class="nav-fixed">
-  <span id="blog-info">
-    <a class="nav-site-title" href="/" title="工具人ya的blog~">
-      
-      <span class="site-name">工具人ya的blog~</span>
-    </a>
-  </span>
-
-  <div id="menus">
+<body class="category-detail">
     
-    <div class="menus_items visible">
-      
-        
-          <div class="menus_item">
-            <a class="site-page" href="/"><i class="fa-fw fa-solid fa-bookmark"></i><span> 首页</span></a>
-          </div>
-        
-          <div class="menus_item">
-            <a class="site-page" href="/post"><i class="fa-fw fa-solid fa-bookmark"></i><span> 博客</span></a>
-          </div>
-        
-          <div class="menus_item">
-            <a class="site-page" href="/memos"><i class="fa-fw fa-solid fa-bookmark"></i><span> 闪念</span></a>
-          </div>
-        
-          <div class="menus_item">
-            <a class="site-page" href="/archives"><i class="fa-fw fa-solid fa-bookmark"></i><span> 归档</span></a>
-          </div>
-        
-          <div class="menus_item">
-            <a class="site-page" href="/post/about"><i class="fa-fw fa-solid fa-bookmark"></i><span> 关于</span></a>
-          </div>
-        
-      
-    </div>
-  </div>
-
-  <div id="nav-right">
-    
-    <div id="travellings"><a class="site-page" href="https://www.travellings.cn/go.html" title="友链接力 - 随机开往" rel="nofollow noopener" target="_blank"><i class="fa-solid fa-bus fa-fw"></i></a></div>
-    
-    
-    <div id="ten-years"><a class="site-page" href="https://foreverblog.cn/go.html" title="十年之约" rel="nofollow noopener" target="_blank"><i class="fa-brands fa-nfc-symbol fa-fw"></i></a></div>
-    
-    
-    <div id="random"><a class="site-page" href="javascript:void(0);" title="随机文章" data-action="random-post"><i class="fa-solid fa-shuffle fa-fw"></i></a></div>
-    
-    
-    <div id="search-button"><span class="site-page social-icon search" data-action="open-search" title="搜索"><i class="fa-solid fa-magnifying-glass fa-fw"></i></span></div>
-    
-    <div id="theme-switch"><span class="site-page" data-action="toggle-theme" title="切换配色"><i class="fa-solid fa-circle-half-stroke fa-fw"></i></span></div>
-    <div id="toggle-menu"><span class="site-page" data-action="toggle-mobile-menu" title="展开菜单"><i class="fa-solid fa-bars fa-fw"></i></span></div>
-  </div>
-</nav>
-
-
-  <div id="body-wrap" class="wrap-default">
-    
-  
-  
-  
-  
-
-
-
-
-
-  <header id="page-header" class="not-home-page nav-fixed-spacer" style="background-image:url('/media/images/default-top.svg')">
-    <div id="page-site-info">
-      <h1 id="site-title">📁</h1>
-      
-    </div>
-    
-      
-<section class="main-hero-waves-area waves-area" aria-hidden="true">
-  <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-    <defs>
-      <path id="liushen-gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path>
-    </defs>
-    <g class="parallax">
-      <use xlink:href="#liushen-gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)"></use>
-      <use xlink:href="#liushen-gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"></use>
-      <use xlink:href="#liushen-gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"></use>
-      <use xlink:href="#liushen-gentle-wave" x="48" y="7" fill="#ffffff"></use>
-    </g>
-  </svg>
-</section>
-
-    
-  </header>
-
-
-
-
-    <main id="content-inner" class="layout layout-with-aside">
-      <div id="content" class="content">
-        
-<section class="category-detail card-widget">
-  <div class="item-headline"><i class="fa-solid fa-folder-open"></i><span>分类： · 8 篇</span></div>
-  <div class="article-sort">
-    
-      
-      <div class="archive-year-block">
-        <h3 class="article-sort-item year"></h3>
-        <ul class="article-sort-list">
-          
-          <li class="article-sort-item no-article-cover">
+<header class="header" role="banner">
+    <div class="header-inner">
+        <a href="/" class="logo" aria-label="工具人ya的blog~">
             
-            <div class="article-sort-item-info">
-              <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i> 2026-03-29T11:37:30+08:00</div>
-              <a class="article-sort-item-title" href="/post/zhou-ji-20263232026329/">周记2026.3.23~2026.3.29</a>
-            </div>
-          </li>
-          
-          <li class="article-sort-item no-article-cover">
+                <span class="logo-text">工具人ya的blog~</span>
             
-            <div class="article-sort-item-info">
-              <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i> 2026-03-22T11:28:03+08:00</div>
-              <a class="article-sort-item-title" href="/post/zhou-ji-20263162026322/">周记2026.3.16~2026.3.22</a>
-            </div>
-          </li>
-          
-          <li class="article-sort-item no-article-cover">
-            
-            <div class="article-sort-item-info">
-              <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i> 2026-03-15T10:53:18+08:00</div>
-              <a class="article-sort-item-title" href="/post/zhou-ji-20263102026315/">周记2026.3.10~2026.3.15</a>
-            </div>
-          </li>
-          
-          <li class="article-sort-item no-article-cover">
-            
-            <div class="article-sort-item-info">
-              <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i> 2026-03-09T10:41:07+08:00</div>
-              <a class="article-sort-item-title" href="/post/zhou-ji-202632202639ben-ji-han-mliang-ji-gao-/">周记2026.3.2~2026.3.9【本集含m量极高】</a>
-            </div>
-          </li>
-          
-          <li class="article-sort-item no-article-cover">
-            
-            <div class="article-sort-item-info">
-              <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i> 2026-03-01T10:27:32+08:00</div>
-              <a class="article-sort-item-title" href="/post/zhou-ji-2026225202631tmde-nong-li-chu-jiu-dao-nong-li-shi-san-ju-ran-shi-zai-xue-xiao-du-guo-de/">周记2026.2.25~2026.3.1（tm的农历初九到农历十三居然是在学校度过的！）</a>
-            </div>
-          </li>
-          
-          <li class="article-sort-item no-article-cover">
-            
-            <div class="article-sort-item-info">
-              <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i> 2026-02-01T10:11:09+08:00</div>
-              <a class="article-sort-item-title" href="/post/zhou-ji-2026127202621/">周记2026.1.27~2026.2.1</a>
-            </div>
-          </li>
-          
-          <li class="article-sort-item no-article-cover">
-            
-            <div class="article-sort-item-info">
-              <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i> 2026-01-17T09:10:19+08:00</div>
-              <a class="article-sort-item-title" href="/post/zhou-ji-20261112026117/">周记2026.1.11~2026.1.17</a>
-            </div>
-          </li>
-          
-          <li class="article-sort-item no-article-cover">
-            
-            <div class="article-sort-item-info">
-              <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i> 2025-12-26T09:56:03+08:00</div>
-              <a class="article-sort-item-title" href="/post/zhou-ji-20261182026116/">周记2026.1.18~2026.1.16</a>
-            </div>
-          </li>
-          
-        </ul>
-      </div>
-      
-    
-  </div>
-</section>
+        </a>
 
-      </div>
-      
-        
-<aside id="aside-content" class="aside-content">
-  <div class="card-widget-wrap">
-    
-<div class="card-widget card-info">
-  <div class="card-content">
-    <div class="card-info-avatar">
-      <img class="avatar-img" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" alt="工具人ya的blog~" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/media/images/default-avatar.svg';">
-    </div>
-    <div class="card-info-data">
-      <div class="author-info-name">工具人ya的blog~</div>
-      <div class="author-info-description">一个热爱生活的开发者</div>
-    </div>
-    <div class="card-info-counts">
-      <div class="count-item">
-        <div class="headline">8</div>
-        <div class="length-num">文章</div>
-      </div>
-      <div class="count-item">
-        <div class="headline">4</div>
-        <div class="length-num">标签</div>
-      </div>
-      <div class="count-item">
-        <div class="headline" id="card-info-runtime">--</div>
-        <div class="length-num">天</div>
-      </div>
-    </div>
-    <div class="card-info-social">
-      
-<a class="social-icon" href="mailto:anda123367@gmail.com" title="Email" rel="noopener"><i class="fa-solid fa-envelope"></i></a>
+        <nav class="nav" aria-label="主导航">
+            
+                <a href="/" class="nav-link">首页</a>
+            
+                <a href="/post" class="nav-link">博客</a>
+            
+                <a href="/memos" class="nav-link">闪念</a>
+            
+                <a href="/archives" class="nav-link">归档</a>
+            
+                <a href="/post/about" class="nav-link">关于</a>
+            
+        </nav>
 
-<a class="social-icon" href="https://github.com/1507045" title="GitHub" rel="noopener" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <div class="header-actions">
+            <button class="btn-icon" id="theme-toggle" type="button" title="切换主题（Cmd/Ctrl+D）" aria-label="切换深浅模式">
+                <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
 
-<a class="social-icon" href="https://space.bilibili.com/524659442" title="哔哩哔哩" rel="noopener" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
-<a class="social-icon" href="/atom.xml" title="RSS" rel="noopener"><i class="fa-solid fa-rss"></i></a>
+            
+            <button class="btn-icon" id="search-toggle" type="button" title="搜索（Cmd/Ctrl+K）" aria-label="搜索">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            
 
-    </div>
-  </div>
-</div>
-
-    
-    
-<div class="card-widget card-announcement">
-  <div class="item-headline"><i class="fa-solid fa-bullhorn"></i><span>公告</span></div>
-  <div class="announcement-content">
-    
-    <p>欢迎来访</p>
-  </div>
-</div>
-
-    
-<div class="card-widget card-recent-post">
-  <div class="item-headline"><i class="fa-solid fa-history"></i><span>最新文章</span></div>
-  <div class="aside-list">
-    
-      
-        
-        <div class="aside-list-item">
-          
-          <a class="thumbnail no-cover" href="/post/zhou-ji-20263232026329/" title="周记2026.3.23~2026.3.29"><i class="fa-solid fa-file-lines"></i></a>
-          
-          <div class="content">
-            <a class="title" href="/post/zhou-ji-20263232026329/" title="周记2026.3.23~2026.3.29">周记2026.3.23~2026.3.29</a>
-            <time class="date">2026-03-29T11:37:30+08:00</time>
-          </div>
+            <button class="btn-icon mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="打开移动端菜单" aria-expanded="false">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
         </div>
-        
-      
-        
-        <div class="aside-list-item">
-          
-          <a class="thumbnail no-cover" href="/post/zhou-ji-20263162026322/" title="周记2026.3.16~2026.3.22"><i class="fa-solid fa-file-lines"></i></a>
-          
-          <div class="content">
-            <a class="title" href="/post/zhou-ji-20263162026322/" title="周记2026.3.16~2026.3.22">周记2026.3.16~2026.3.22</a>
-            <time class="date">2026-03-22T11:28:03+08:00</time>
-          </div>
-        </div>
-        
-      
-        
-        <div class="aside-list-item">
-          
-          <a class="thumbnail no-cover" href="/post/zhou-ji-20263102026315/" title="周记2026.3.10~2026.3.15"><i class="fa-solid fa-file-lines"></i></a>
-          
-          <div class="content">
-            <a class="title" href="/post/zhou-ji-20263102026315/" title="周记2026.3.10~2026.3.15">周记2026.3.10~2026.3.15</a>
-            <time class="date">2026-03-15T10:53:18+08:00</time>
-          </div>
-        </div>
-        
-      
-        
-        <div class="aside-list-item">
-          
-          <a class="thumbnail no-cover" href="/post/zhou-ji-202632202639ben-ji-han-mliang-ji-gao-/" title="周记2026.3.2~2026.3.9【本集含m量极高】"><i class="fa-solid fa-file-lines"></i></a>
-          
-          <div class="content">
-            <a class="title" href="/post/zhou-ji-202632202639ben-ji-han-mliang-ji-gao-/" title="周记2026.3.2~2026.3.9【本集含m量极高】">周记2026.3.2~2026.3.9【本集含m量极高】</a>
-            <time class="date">2026-03-09T10:41:07+08:00</time>
-          </div>
-        </div>
-        
-      
-        
-        <div class="aside-list-item">
-          
-          <a class="thumbnail no-cover" href="/post/zhou-ji-2026225202631tmde-nong-li-chu-jiu-dao-nong-li-shi-san-ju-ran-shi-zai-xue-xiao-du-guo-de/" title="周记2026.2.25~2026.3.1（tm的农历初九到农历十三居然是在学校度过的！）"><i class="fa-solid fa-file-lines"></i></a>
-          
-          <div class="content">
-            <a class="title" href="/post/zhou-ji-2026225202631tmde-nong-li-chu-jiu-dao-nong-li-shi-san-ju-ran-shi-zai-xue-xiao-du-guo-de/" title="周记2026.2.25~2026.3.1（tm的农历初九到农历十三居然是在学校度过的！）">周记2026.2.25~2026.3.1（tm的农历初九到农历十三居然是在学校度过的！）</a>
-            <time class="date">2026-03-01T10:27:32+08:00</time>
-          </div>
-        </div>
-        
-      
-        
-      
-        
-      
-        
-      
-    
-  </div>
-</div>
-
-    
-    
-<div class="card-widget card-tags">
-  <div class="item-headline"><i class="fa-solid fa-tags"></i><span>标签云</span></div>
-  <div class="card-tag-cloud">
-    
-      
-        
-          
-          <a href="/tag/gridea/" title="Gridea (1)" class="tag-cloud-item" data-count="1">Gridea<sup>1</sup></a>
-        
-      
-        
-          
-          <a href="/tag/gridea-pro/" title="Gridea Pro (5)" class="tag-cloud-item" data-count="5">Gridea Pro<sup>5</sup></a>
-        
-      
-        
-          
-          <a href="/tag/getting-started/" title="入门 (1)" class="tag-cloud-item" data-count="1">入门<sup>1</sup></a>
-        
-      
-        
-          
-          <a href="/tag//Weekly_Journal/" title="周记 (12)" class="tag-cloud-item" data-count="12">周记<sup>12</sup></a>
-        
-      
-    
-  </div>
-</div>
-
-    
-<div class="card-widget card-archives">
-  <div class="item-headline"><i class="fa-solid fa-archive"></i><span>归档</span></div>
-  <ul class="card-archive-list">
-    
-      
-        
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/#year-">
-            <span class="card-archive-list-date"></span>
-            <span class="card-archive-list-count">8</span>
-          </a>
-        </li>
-        
-      
-    
-  </ul>
-</div>
-
-    
-<div class="card-widget card-webinfo">
-  <div class="item-headline"><i class="fa-solid fa-chart-pie"></i><span>网站统计</span></div>
-  <div class="webinfo">
-    <div class="webinfo-item"><span class="webinfo-label">文章</span><span class="webinfo-value">8</span></div>
-    <div class="webinfo-item"><span class="webinfo-label">标签</span><span class="webinfo-value">4</span></div>
-    <div class="webinfo-item"><span class="webinfo-label">分类</span><span class="webinfo-value">0</span></div>
-    <div class="webinfo-item"><span class="webinfo-label">运行</span><span class="webinfo-value" id="webinfo-runtime" data-since="2026-5-10">--</span><span class="webinfo-unit">天</span></div>
-    <div class="webinfo-item" id="webinfo-busuanzi" hidden>
-      <span class="webinfo-label">访客</span><span class="webinfo-value" id="busuanzi_value_site_uv">--</span>
     </div>
-    <div class="webinfo-item" id="webinfo-busuanzi-pv" hidden>
-      <span class="webinfo-label">浏览</span><span class="webinfo-value" id="busuanzi_value_site_pv">--</span>
-    </div>
-  </div>
+</header>
+
+
+<div class="mobile-nav" id="mobile-nav" aria-label="移动端导航">
+    
+        <a href="/" class="mobile-nav-link">首页</a>
+    
+        <a href="/post" class="mobile-nav-link">博客</a>
+    
+        <a href="/memos" class="mobile-nav-link">闪念</a>
+    
+        <a href="/archives" class="mobile-nav-link">归档</a>
+    
+        <a href="/post/about" class="mobile-nav-link">关于</a>
+    
 </div>
 
-  </div>
-</aside>
 
-      
+
+
+<div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="站内搜索">
+    <div class="search-modal-content">
+        <div class="search-input-wrapper">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" class="search-input" placeholder="搜索文章、闪念、标签..." autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+            <button type="button" class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
+        </div>
+
+        <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果">
+            <p class="search-empty">输入关键词开始搜索 · 支持标题 / 摘要 / 标签 / 闪念</p>
+        </div>
+
+        <div class="search-shortcuts">
+            <span><kbd>↵</kbd> 打开</span>
+            <span><kbd>↑</kbd><kbd>↓</kbd> 切换</span>
+            <span><kbd>esc</kbd> 关闭</span>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <main class="main" role="main">
+        
+<div class="container">
+    <div class="category-header">
+        <p class="category-eyebrow">分类</p>
+        <h1 class="category-title"></h1>
+        <p class="category-desc">共 8 篇文章</p>
+    </div>
+
+    
+    <div class="post-list">
+        
+            
+                
+<article class="post">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/zhou-ji-20263232026329/">周记2026.3.23~2026.3.29</a>
+        </h2>
+
+        <p class="post-excerpt">新的一周又结束了，我们的“疯狂三月”的活动也结束了。那首奇怪的歌曲终于也是快要消失了！！太棒了！！！
+周周三体育课前玩游戏，玩法是边模仿别人便抓住他。又一轮碰到我追CSZ，本来想的是追上他，然后故意跑慢点让他碰到我。这是个多么美妙的剧情啊。。。。。结果到最后没力气了，直接让他逃走了！！！啊！！！！真...</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-03-29T11:37:30+08:00">2026-03-29T11:37:30+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-category">
+                <a href="/tag//Weekly_Journal/">周记</a>
+            </span>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">2 min read 分钟阅读</span>
+        </div>
+
+    
+</article>
+
+            
+        
+            
+                
+<article class="post">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/zhou-ji-20263162026322/">周记2026.3.16~2026.3.22</a>
+        </h2>
+
+        <p class="post-excerpt">TM的，高二五班跟我们班打篮球，我们班赢了，然后就说我们班打黑球；tm他们自己跟高一三班的人踢足球，比分迟迟没有差别，就开始骂起三班来。TM还好意思和自己年段的其他人说我们高一怎么样怎么样，结果就是整个高二和高一产生了对立。三班的一个人还被高二五班的人开盒了，这种没有素质的人是怎么活在这个世界上的？...</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-03-22T11:28:03+08:00">2026-03-22T11:28:03+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-category">
+                <a href="/tag//Weekly_Journal/">周记</a>
+            </span>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">2 min read 分钟阅读</span>
+        </div>
+
+    
+</article>
+
+            
+        
+            
+                
+<article class="post">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/zhou-ji-20263102026315/">周记2026.3.10~2026.3.15</a>
+        </h2>
+
+        <p class="post-excerpt">美妙的一周又要结束了，又到了回顾一周的时候。
+这周学校正式开始了“疯狂三月”的活动，每天都会在广播放着《疯狂三月》这首歌，tm这首类似AI创作的歌曲是我们学校真人老师写的原创曲目，全歌一直在吼着“疯狂三月”，然后其他的是完全听不清，真的是【气笑了】
+周二的时候我们班和初三的人打篮球，得分是12-26...</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-03-15T10:53:18+08:00">2026-03-15T10:53:18+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-category">
+                <a href="/tag//Weekly_Journal/">周记</a>
+            </span>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">2 min read 分钟阅读</span>
+        </div>
+
+    
+</article>
+
+            
+        
+            
+                
+<article class="post">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/zhou-ji-202632202639ben-ji-han-mliang-ji-gao-/">周记2026.3.2~2026.3.9【本集含m量极高】</a>
+        </h2>
+
+        <p class="post-excerpt">又是过了一周，数学跟生物在这周日考试，结果都挺烂的【悲伤】。原来大人们说的高中开始会有超级低的成绩就是指这个时候啊。。。
+上周因为要被带到外公外婆家，就不小心把手机带到学校，放了一周。。。。。结果在这期间WZB找到了个H网站，而WZX就用我那小手机看了半天的H网站，tm我总是怕教官瞬移过来，就在外面...</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-03-09T10:41:07+08:00">2026-03-09T10:41:07+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-category">
+                <a href="/tag//Weekly_Journal/">周记</a>
+            </span>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">2 min read 分钟阅读</span>
+        </div>
+
+    
+</article>
+
+            
+        
+            
+                
+<article class="post">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/zhou-ji-2026225202631tmde-nong-li-chu-jiu-dao-nong-li-shi-san-ju-ran-shi-zai-xue-xiao-du-guo-de/">周记2026.2.25~2026.3.1（tm的农历初九到农历十三居然是在学校度过的！）</a>
+        </h2>
+
+        <p class="post-excerpt">开学第一个半周。。。。。TM的就因为下学期天数减少，我们泉州就得提前？其他地方就没有提前啊！！！！心累。。。。这周还tm的只放假半天。
+这学期的课表变动也是非常的“有趣”啊，心理课和音乐课二合一，单周音乐，双周心理，我这心理委员的地位也是更低了呢。。。。但是！这学期的课表里出现了一节信息课！（好耶！...</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-03-01T10:27:32+08:00">2026-03-01T10:27:32+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-category">
+                <a href="/tag//Weekly_Journal/">周记</a>
+            </span>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">2 min read 分钟阅读</span>
+        </div>
+
+    
+</article>
+
+            
+        
+            
+                
+<article class="post">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/zhou-ji-2026127202621/">周记2026.1.27~2026.2.1</a>
+        </h2>
+
+        <p class="post-excerpt">下周就要开始期末考了，只能说顺其自然就好，不要求会有什么大风大浪吧。老师周日过来的时候说大年初一来自习会奖励红包（虽然但是，大年初一啊？？？）
+tm的，周一晚上放学后正在给别人讲题呢，WLH叫我要排课表，我很不耐烦地说了句:“要你管。”她马上就发火了，然后周三还跟DWT将LZH喜欢DWT。到时候LZ...</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-02-01T10:11:09+08:00">2026-02-01T10:11:09+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-category">
+                <a href="/tag//Weekly_Journal/">周记</a>
+            </span>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">2 min read 分钟阅读</span>
+        </div>
+
+    
+</article>
+
+            
+        
+            
+                
+<article class="post">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/zhou-ji-20261112026117/">周记2026.1.11~2026.1.17</a>
+        </h2>
+
+        <p class="post-excerpt">这周是开学的第一周，现在是周末，总该回忆一些什么，才能更好地面对着下一周。
+先聊一点无语的事情吧。CJY将自己被起外号的事情告诉给了老师，然后老师也是非常严肃地处理
+了，说什么没有找到幕后使者决不罢休。说句实话，这种”真凶“不可能真的找到的。很多时候都是几个有共同想法的人讨论讨论着就出现的外号，哪怕...</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-01-17T09:10:19+08:00">2026-01-17T09:10:19+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-category">
+                <a href="/tag//Weekly_Journal/">周记</a>
+            </span>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">2 min read 分钟阅读</span>
+        </div>
+
+    
+</article>
+
+            
+        
+            
+                
+<article class="post">
+    
+
+        
+
+        <h2 class="post-title">
+            <a href="/post/zhou-ji-20261182026116/">周记2026.1.18~2026.1.16</a>
+        </h2>
+
+        <p class="post-excerpt">给我无语死了，班主任说找不到幕后真凶，全班跑5天，她自己跑两倍。结果她自己真正的只跑了2Day（单押了，我真棒！），我们也只真正的跑了4天，还说班上有了凝聚力。我就想问了，怎么说的凝聚力，这很扯啊。
+然后我在周三的时候在CSZ对面吃饭！！！啊！！！！这吃饭多是一件美事啊~
+（虽然但是，怎么看都有点变...</p>
+
+        <div class="post-meta">
+            <time class="post-date" datetime="2025-12-26T09:56:03+08:00">2025-12-26T09:56:03+08:00</time>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-category">
+                <a href="/tag//Weekly_Journal/">周记</a>
+            </span>
+            
+            <span class="post-meta-sep">·</span>
+            <span class="post-reading-time">2 min read 分钟阅读</span>
+        </div>
+
+    
+</article>
+
+            
+        
+    </div>
+    
+</div>
+
     </main>
 
-    <footer id="footer">
-      
-<div class="footer-wrap">
-  <div class="footer-icons" aria-hidden="true">
-    <span class="footer-decoration"><i class="fa-solid fa-feather"></i></span>
-  </div>
-  <div class="footer-content">
-    <div class="footer-info">
-      <p class="footer-site-name">工具人ya的blog~</p>
-      <p class="footer-tagline">Welcome to My Blog</p>
-      <div class="footer-social">
+    
+<footer class="footer" role="contentinfo">
+    <div class="container">
         
-<a class="social-icon" href="mailto:anda123367@gmail.com" title="Email" rel="noopener"><i class="fa-solid fa-envelope"></i></a>
+        <p class="footer-text">克制 · 留白 · 一记一画</p>
+        
 
-<a class="social-icon" href="https://github.com/1507045" title="GitHub" rel="noopener" target="_blank"><i class="fa-brands fa-github"></i></a>
+        
+        <p class="footer-copyright">© 2026 刻画主题 · Powered by Gridea Pro</p>
+        
 
-<a class="social-icon" href="https://space.bilibili.com/524659442" title="哔哩哔哩" rel="noopener" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
-<a class="social-icon" href="/atom.xml" title="RSS" rel="noopener"><i class="fa-solid fa-rss"></i></a>
-
-      </div>
+        
+        <p class="footer-theme">Theme by <a href="https://kehua.me" target="_blank" rel="noopener noreferrer">kehua</a> · 移植 by <a href="https://gridea.pro" target="_blank" rel="noopener noreferrer">Gridea Pro</a></p>
+        
     </div>
-    <div class="footer-nav">
-      <a href="/">首页</a>
-      <a href="/archives/">归档</a>
-      <a href="/tags/">标签</a>
-      <a href="/categories/">分类</a>
-      <a href="/links/">友链</a>
-      <a href="/about/">关于</a>
-    </div>
-    
-    <div class="footer-extra"><a href="https://hexo.io">Powered by Gridea Pro</a></div>
-    
-  </div>
-  <div class="footer-bottom">
-    <p class="footer-copyright">© 2024 - {YEAR} · Liushen</p>
-    
-  </div>
-</div>
-
-    </footer>
-  </div>
-
-  
-<div id="rightside" class="rightside">
-  <div id="rightside-config-hide">
-    <button class="rightside-btn" data-action="toggle-toc" title="目录" hidden id="rightside-toc"><i class="fa-solid fa-list"></i></button>
-    <button class="rightside-btn" data-action="toggle-theme" title="切换主题"><i class="fa-solid fa-circle-half-stroke"></i></button>
-  </div>
-  
-  <button class="rightside-btn scroll-to-top" data-action="scroll-to-top" title="回到顶部" hidden><i class="fa-solid fa-angle-up"></i></button>
-  
-</div>
+</footer>
 
 
+<button class="back-to-top" id="back-to-top" type="button" title="回到顶部" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
 
-  
-    
-<div id="search-modal" class="search-modal" hidden>
-  <div class="search-modal-backdrop" data-action="close-search"></div>
-  <div class="search-modal-panel">
-    <div class="search-modal-header">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input id="search-input" type="search" placeholder="搜索文章标题、标签、内容…" autocomplete="off" spellcheck="false">
-      <button class="search-modal-close" data-action="close-search" type="button" aria-label="关闭搜索"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="search-modal-body">
-      <ul id="search-results" class="search-results"></ul>
-      <div id="search-empty" class="search-empty" hidden>未找到匹配的内容</div>
-      <div id="search-tip" class="search-tip">输入关键词开始搜索，按 Esc 关闭</div>
-    </div>
-  </div>
-</div>
+
 
     
-<script id="search-index-data" type="application/json">
+    
+
+<script id="kehua-search-data" type="application/json">
 {
   "posts": [
-    
-      
-        
-        {
-          "title": "周记2026.3.23~2026.3.29",
-          "link": "/post/zhou-ji-20263232026329/",
-          "date": "2026-03-29T11:37:30+08:00",
-          "feature": "",
-          "tags": ["周记"],
-          "excerpt": "新的一周又结束了，我们的“疯狂三月”的活动也结束了。那首奇怪的歌曲终于也是快要消失了！！太棒了！！！\n周周三体育课前玩游戏，玩法是边模仿别人便抓住他。又一轮碰到我追CSZ，本来想的是追上他，然后故意跑慢点让他碰到我。这是个多么美妙的剧情啊。。。。。结果到最后没力气了，直接让他逃走了！！！啊！！！！真的是超级无敌max的可惜啊！！！不行，现在必须把体育练起来才行啊！【说起来好变态啊，为了这个去..."
-        },
-        
-      
-        
-        {
-          "title": "周记2026.3.16~2026.3.22",
-          "link": "/post/zhou-ji-20263162026322/",
-          "date": "2026-03-22T11:28:03+08:00",
-          "feature": "",
-          "tags": ["周记"],
-          "excerpt": "TM的，高二五班跟我们班打篮球，我们班赢了，然后就说我们班打黑球；tm他们自己跟高一三班的人踢足球，比分迟迟没有差别，就开始骂起三班来。TM还好意思和自己年段的其他人说我们高一怎么样怎么样，结果就是整个高二和高一产生了对立。三班的一个人还被高二五班的人开盒了，这种没有素质的人是怎么活在这个世界上的？？？？tm明天升旗仪式的时候还要被老师做思想教育，给我气笑了。\n我周三的时候上校本课【英语的P..."
-        },
-        
-      
-        
-        {
-          "title": "周记2026.3.10~2026.3.15",
-          "link": "/post/zhou-ji-20263102026315/",
-          "date": "2026-03-15T10:53:18+08:00",
-          "feature": "",
-          "tags": ["周记"],
-          "excerpt": "美妙的一周又要结束了，又到了回顾一周的时候。\n这周学校正式开始了“疯狂三月”的活动，每天都会在广播放着《疯狂三月》这首歌，tm这首类似AI创作的歌曲是我们学校真人老师写的原创曲目，全歌一直在吼着“疯狂三月”，然后其他的是完全听不清，真的是【气笑了】\n周二的时候我们班和初三的人打篮球，得分是12-26【我们26】可能是看这太简单了，他们就让所有报名的队员都上去了。然后！HWK自己因为家长不同意..."
-        },
-        
-      
-        
-        {
-          "title": "周记2026.3.2~2026.3.9【本集含m量极高】",
-          "link": "/post/zhou-ji-202632202639ben-ji-han-mliang-ji-gao-/",
-          "date": "2026-03-09T10:41:07+08:00",
-          "feature": "",
-          "tags": ["周记"],
-          "excerpt": "又是过了一周，数学跟生物在这周日考试，结果都挺烂的【悲伤】。原来大人们说的高中开始会有超级低的成绩就是指这个时候啊。。。\n上周因为要被带到外公外婆家，就不小心把手机带到学校，放了一周。。。。。结果在这期间WZB找到了个H网站，而WZX就用我那小手机看了半天的H网站，tm我总是怕教官瞬移过来，就在外面当哨兵待上个10分钟。结果到了星期五，手机没电，MP4没电，充电宝没电，耳机也tm的没电了。。..."
-        },
-        
-      
-        
-        {
-          "title": "周记2026.2.25~2026.3.1（tm的农历初九到农历十三居然是在学校度过的！）",
-          "link": "/post/zhou-ji-2026225202631tmde-nong-li-chu-jiu-dao-nong-li-shi-san-ju-ran-shi-zai-xue-xiao-du-guo-de/",
-          "date": "2026-03-01T10:27:32+08:00",
-          "feature": "",
-          "tags": ["周记"],
-          "excerpt": "开学第一个半周。。。。。TM的就因为下学期天数减少，我们泉州就得提前？其他地方就没有提前啊！！！！心累。。。。这周还tm的只放假半天。\n这学期的课表变动也是非常的“有趣”啊，心理课和音乐课二合一，单周音乐，双周心理，我这心理委员的地位也是更低了呢。。。。但是！这学期的课表里出现了一节信息课！（好耶！）看了一下课本，内容大概学的是python（讲个笑话，现在是python3.14版本，而书本上..."
-        },
-        
-      
-        
-        {
-          "title": "周记2026.1.27~2026.2.1",
-          "link": "/post/zhou-ji-2026127202621/",
-          "date": "2026-02-01T10:11:09+08:00",
-          "feature": "",
-          "tags": ["周记"],
-          "excerpt": "下周就要开始期末考了，只能说顺其自然就好，不要求会有什么大风大浪吧。老师周日过来的时候说大年初一来自习会奖励红包（虽然但是，大年初一啊？？？）\ntm的，周一晚上放学后正在给别人讲题呢，WLH叫我要排课表，我很不耐烦地说了句:“要你管。”她马上就发火了，然后周三还跟DWT将LZH喜欢DWT。到时候LZH自己来找她们的时候又马上跑走了，真是无语死了。周末还在朋友圈发什么：“我知道有人在骂我。”（..."
-        },
-        
-      
-        
-        {
-          "title": "周记2026.1.11~2026.1.17",
-          "link": "/post/zhou-ji-20261112026117/",
-          "date": "2026-01-17T09:10:19+08:00",
-          "feature": "",
-          "tags": ["周记"],
-          "excerpt": "这周是开学的第一周，现在是周末，总该回忆一些什么，才能更好地面对着下一周。\n先聊一点无语的事情吧。CJY将自己被起外号的事情告诉给了老师，然后老师也是非常严肃地处理\n了，说什么没有找到幕后使者决不罢休。说句实话，这种”真凶“不可能真的找到的。很多时候都是几个有共同想法的人讨论讨论着就出现的外号，哪怕真的有，也不可能有人记得是谁（除非你是受害者。TM的，哪个班不可能有这些的事情啊，这种处理方式..."
-        },
-        
-      
-        
-        {
-          "title": "周记2026.1.18~2026.1.16",
-          "link": "/post/zhou-ji-20261182026116/",
-          "date": "2025-12-26T09:56:03+08:00",
-          "feature": "",
-          "tags": ["周记"],
-          "excerpt": "给我无语死了，班主任说找不到幕后真凶，全班跑5天，她自己跑两倍。结果她自己真正的只跑了2Day（单押了，我真棒！），我们也只真正的跑了4天，还说班上有了凝聚力。我就想问了，怎么说的凝聚力，这很扯啊。\n然后我在周三的时候在CSZ对面吃饭！！！啊！！！！这吃饭多是一件美事啊~\n（虽然但是，怎么看都有点变态了，在此声明：我应该、可能、大概不是gay）\n然后由谁可以给我解释一下为什么我arch Li..."
-        }
-        
-      
-    
+    {
+      "title": "周记2026.3.23~2026.3.29",
+      "link": "/post/zhou-ji-20263232026329/",
+      "date": "2026-03-29T11:37:30+08:00",
+      "excerpt": "新的一周又结束了，我们的“疯狂三月”的活动也结束了。那首奇怪的歌曲终于也是快要消失了！！太棒了！！！\n周周三体育课前玩游戏，玩法是边模仿别人便抓住他。又一轮碰到我追CSZ，本来想的是追上他，然后故意跑慢点让他碰到我。这是个多么美妙的剧情啊。...",
+      "tags": ["周记"]
+    },{
+      "title": "周记2026.3.16~2026.3.22",
+      "link": "/post/zhou-ji-20263162026322/",
+      "date": "2026-03-22T11:28:03+08:00",
+      "excerpt": "TM的，高二五班跟我们班打篮球，我们班赢了，然后就说我们班打黑球；tm他们自己跟高一三班的人踢足球，比分迟迟没有差别，就开始骂起三班来。TM还好意思和自己年段的其他人说我们高一怎么样怎么样，结果就是整个高二和高一产生了对立。三班的一个人还被...",
+      "tags": ["周记"]
+    },{
+      "title": "周记2026.3.10~2026.3.15",
+      "link": "/post/zhou-ji-20263102026315/",
+      "date": "2026-03-15T10:53:18+08:00",
+      "excerpt": "美妙的一周又要结束了，又到了回顾一周的时候。\n这周学校正式开始了“疯狂三月”的活动，每天都会在广播放着《疯狂三月》这首歌，tm这首类似AI创作的歌曲是我们学校真人老师写的原创曲目，全歌一直在吼着“疯狂三月”，然后其他的是完全听不清，真的是【...",
+      "tags": ["周记"]
+    },{
+      "title": "周记2026.3.2~2026.3.9【本集含m量极高】",
+      "link": "/post/zhou-ji-202632202639ben-ji-han-mliang-ji-gao-/",
+      "date": "2026-03-09T10:41:07+08:00",
+      "excerpt": "又是过了一周，数学跟生物在这周日考试，结果都挺烂的【悲伤】。原来大人们说的高中开始会有超级低的成绩就是指这个时候啊。。。\n上周因为要被带到外公外婆家，就不小心把手机带到学校，放了一周。。。。。结果在这期间WZB找到了个H网站，而WZX就用我...",
+      "tags": ["周记"]
+    },{
+      "title": "周记2026.2.25~2026.3.1（tm的农历初九到农历十三居然是在学校度过的！）",
+      "link": "/post/zhou-ji-2026225202631tmde-nong-li-chu-jiu-dao-nong-li-shi-san-ju-ran-shi-zai-xue-xiao-du-guo-de/",
+      "date": "2026-03-01T10:27:32+08:00",
+      "excerpt": "开学第一个半周。。。。。TM的就因为下学期天数减少，我们泉州就得提前？其他地方就没有提前啊！！！！心累。。。。这周还tm的只放假半天。\n这学期的课表变动也是非常的“有趣”啊，心理课和音乐课二合一，单周音乐，双周心理，我这心理委员的地位也是更...",
+      "tags": ["周记"]
+    },{
+      "title": "周记2026.1.27~2026.2.1",
+      "link": "/post/zhou-ji-2026127202621/",
+      "date": "2026-02-01T10:11:09+08:00",
+      "excerpt": "下周就要开始期末考了，只能说顺其自然就好，不要求会有什么大风大浪吧。老师周日过来的时候说大年初一来自习会奖励红包（虽然但是，大年初一啊？？？）\ntm的，周一晚上放学后正在给别人讲题呢，WLH叫我要排课表，我很不耐烦地说了句:“要你管。”她马...",
+      "tags": ["周记"]
+    },{
+      "title": "周记2026.1.11~2026.1.17",
+      "link": "/post/zhou-ji-20261112026117/",
+      "date": "2026-01-17T09:10:19+08:00",
+      "excerpt": "这周是开学的第一周，现在是周末，总该回忆一些什么，才能更好地面对着下一周。\n先聊一点无语的事情吧。CJY将自己被起外号的事情告诉给了老师，然后老师也是非常严肃地处理\n了，说什么没有找到幕后使者决不罢休。说句实话，这种”真凶“不可能真的找到的...",
+      "tags": ["周记"]
+    },{
+      "title": "周记2026.1.18~2026.1.16",
+      "link": "/post/zhou-ji-20261182026116/",
+      "date": "2025-12-26T09:56:03+08:00",
+      "excerpt": "给我无语死了，班主任说找不到幕后真凶，全班跑5天，她自己跑两倍。结果她自己真正的只跑了2Day（单押了，我真棒！），我们也只真正的跑了4天，还说班上有了凝聚力。我就想问了，怎么说的凝聚力，这很扯啊。\n然后我在周三的时候在CSZ对面吃饭！！！...",
+      "tags": ["周记"]
+    }
+  ],
+  "tags": [
+    {
+      "name": "Gridea",
+      "link": "/tag/gridea/",
+      "count": 1
+    },{
+      "name": "Gridea Pro",
+      "link": "/tag/gridea-pro/",
+      "count": 5
+    },{
+      "name": "入门",
+      "link": "/tag/getting-started/",
+      "count": 1
+    },{
+      "name": "周记",
+      "link": "/tag//Weekly_Journal/",
+      "count": 12
+    }
   ]
 }
 </script>
 
-  
 
-  
-  
-  
-  
-  
-  
-  
-  
-  <script id="liushen-config-data" type="application/json">
-{
-  "domain": "https://gjry.eu.org",
-  "siteName": "工具人ya的blog~",
-  "defaultTheme": "auto",
-  "tocEnable": true,
-  "codeCopy": true,
-  "readingProgress": true,
-  "scrollToTop": true,
-  "heatmapEnable": true,
-  "randomPostEnable": true,
-  "subtitleSpeed": 120,
-  "subtitleList": "既然选择远方，当不负青春，砥砺前行。\n青春由磨砺而出彩，人生因奋斗而升华！\n但行前路，不负韶华！\n每一个裂缝都是为透出光而努力",
-  "navMenuJson": "[]"
-}
-  </script>
-  <script>
-    (function(){
-      try { window.LIUSHEN_CONFIG = JSON.parse(document.getElementById('liushen-config-data').textContent); }
-      catch (e) { window.LIUSHEN_CONFIG = {}; }
-    })();
-  </script>
-  <script src="/scripts/main.js" defer></script>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="8c9d58bb-be79-41ec-b5f0-fe26ad2bdf5e"></script>
-  
-  
-  
-<script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: liushen v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+
+    
+    <script src="/scripts/main.js" defer></script>
+
+    
+    
+
+    
+<script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: kehua v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
 </body>
 </html>

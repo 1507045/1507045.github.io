@@ -1,20 +1,53 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="auto" class="not-loaded">
 <head>
-    
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="generator" content="Gridea Pro 1.2.2">
-<title>入门 | 工具人ya的blog~</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1781797610">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="入门 | 工具人ya的blog~ - Atom Feed" href="/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="generator" content="Gridea Pro · Liushen Theme">
+  <meta name="generator" content="Gridea Pro 1.2.2">
+  <title># | 工具人ya的blog~</title>
+  <meta name="description" content="Welcome to My Blog">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="工具人ya的blog~">
+  <meta property="og:description" content="Welcome to My Blog">
+  <meta property="og:image" content="/images/avatar.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" type="image/x-icon">
+  <link rel="alternate" type="application/atom+xml" title="工具人ya的blog~" href="/atom.xml">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/styles/main.css">
 
+  <style id="liushen-theme-vars">
+    :root{
+      --primary:#2679cc;
+      --accent:#00c4b6;
+      --text:rgba(0, 0, 0, 0.86);
+      --card-radius:12px;
+      --body-font:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --code-font:Consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', monospace;
+      --sidebar-gradient:linear-gradient(60deg, #ffd7e4 0%, #c8f1ff 100%);
+      --bg-image-light:url('/media/images/bg-light.svg');
+      --bg-image-dark:url('/media/images/bg-dark.svg');
+    }
+  </style>
+  
 
-    <meta name="description" content="Welcome to My Blog" />
+  <script>
+    (function(){
+      var pref="auto";
+      try{var saved=localStorage.getItem('liushen-theme');if(saved)pref=saved;}catch(e){}
+      var resolved=pref;
+      if(pref==='auto'){var h=new Date().getHours();resolved=(h>=6&&h<18)?'light':'dark';}
+      document.documentElement.setAttribute('data-theme',resolved);
+      document.documentElement.dataset.themePref=pref;
+    })();
+  </script>
+
+  
+  
 <meta name="description" content="Welcome to My Blog">
 <link rel="canonical" href="https://gjry.eu.org/tag/getting-started/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"工具人ya的blog~","url":"https://gjry.eu.org","description":"Welcome to My Blog","potentialAction":{"@type":"SearchAction","query-input":"required name=search_term_string","target":"https://gjry.eu.org/search?q={search_term_string}"}}</script>
@@ -41,128 +74,444 @@
 <meta name="msapplication-TileImage" content="/images/icons/icon-192x192.png">
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
 </head>
+<body class="page-tag">
 
-<body>
-    <div class="main">
-        <div class="main-content">
-            
-<div class="site-header">
-    <a href="/">
-        <img class="avatar" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png?v=1781797610" alt="">
-    </a>
-    <h1 class="site-title">
-        工具人ya的blog~
-    </h1>
-    <p class="site-description">
-        Welcome to My Blog
-    </p>
-    <div class="menu-container">
+  
+  <div id="reading-progress" aria-hidden="true"><span></span></div>
+  
+
+  <div id="web-bg" aria-hidden="true"></div>
+  <div id="sun-moon-cover" aria-hidden="true"></div>
+
+  
+<div id="mobile-sidebar" class="mobile-sidebar" hidden>
+  <div class="mobile-sidebar-backdrop" data-action="close-mobile-menu"></div>
+  <aside class="mobile-sidebar-panel">
+    <header class="mobile-sidebar-header">
+      <img class="mobile-avatar" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" alt="工具人ya的blog~" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/media/images/default-avatar.svg';">
+      <h3 class="mobile-site-name">工具人ya的blog~</h3>
+      <p class="mobile-tagline">Welcome to My Blog</p>
+    </header>
+    <nav class="mobile-sidebar-nav" id="mobile-nav-list">
+      
         
+        <a href="/" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>首页</span></a>
         
-        <a href="/" class="menu">
-            首页
-        </a>
+        <a href="/post" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>博客</span></a>
         
+        <a href="/memos" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>闪念</span></a>
         
+        <a href="/archives" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>归档</span></a>
         
-        <a href="/post" class="menu">
-            博客
-        </a>
+        <a href="/post/about" class="mobile-nav-item"><i class="fa-fw fa-solid fa-bookmark"></i><span>关于</span></a>
         
-        
-        
-        <a href="/memos" class="menu">
-            闪念
-        </a>
-        
-        
-        
-        <a href="/archives" class="menu">
-            归档
-        </a>
-        
-        
-        
-        <a href="/post/about" class="menu">
-            关于
-        </a>
-        
-        
-    </div>
-    <div class="social-container">
-        
-        
-        
-        
-        
-    </div>
+      
+    </nav>
+    <footer class="mobile-sidebar-footer">
+      
+<a class="social-icon" href="mailto:anda123367@gmail.com" title="Email" rel="noopener"><i class="fa-solid fa-envelope"></i></a>
+
+<a class="social-icon" href="https://github.com/1507045" title="GitHub" rel="noopener" target="_blank"><i class="fa-brands fa-github"></i></a>
+
+<a class="social-icon" href="https://space.bilibili.com/524659442" title="哔哩哔哩" rel="noopener" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
+<a class="social-icon" href="/atom.xml" title="RSS" rel="noopener"><i class="fa-solid fa-rss"></i></a>
+
+    </footer>
+  </aside>
 </div>
 
-            <div class="current-tag-container">
-                <h2 class="title">
-                    标签：# 入门
-                </h2>
+  
+<nav id="nav" class="nav-fixed">
+  <span id="blog-info">
+    <a class="nav-site-title" href="/" title="工具人ya的blog~">
+      
+      <span class="site-name">工具人ya的blog~</span>
+    </a>
+  </span>
+
+  <div id="menus">
+    
+    <div class="menus_items visible">
+      
+        
+          <div class="menus_item">
+            <a class="site-page" href="/"><i class="fa-fw fa-solid fa-bookmark"></i><span> 首页</span></a>
+          </div>
+        
+          <div class="menus_item">
+            <a class="site-page" href="/post"><i class="fa-fw fa-solid fa-bookmark"></i><span> 博客</span></a>
+          </div>
+        
+          <div class="menus_item">
+            <a class="site-page" href="/memos"><i class="fa-fw fa-solid fa-bookmark"></i><span> 闪念</span></a>
+          </div>
+        
+          <div class="menus_item">
+            <a class="site-page" href="/archives"><i class="fa-fw fa-solid fa-bookmark"></i><span> 归档</span></a>
+          </div>
+        
+          <div class="menus_item">
+            <a class="site-page" href="/post/about"><i class="fa-fw fa-solid fa-bookmark"></i><span> 关于</span></a>
+          </div>
+        
+      
+    </div>
+  </div>
+
+  <div id="nav-right">
+    
+    <div id="travellings"><a class="site-page" href="https://www.travellings.cn/go.html" title="友链接力 - 随机开往" rel="nofollow noopener" target="_blank"><i class="fa-solid fa-bus fa-fw"></i></a></div>
+    
+    
+    <div id="ten-years"><a class="site-page" href="https://foreverblog.cn/go.html" title="十年之约" rel="nofollow noopener" target="_blank"><i class="fa-brands fa-nfc-symbol fa-fw"></i></a></div>
+    
+    
+    <div id="random"><a class="site-page" href="javascript:void(0);" title="随机文章" data-action="random-post"><i class="fa-solid fa-shuffle fa-fw"></i></a></div>
+    
+    
+    <div id="search-button"><span class="site-page social-icon search" data-action="open-search" title="搜索"><i class="fa-solid fa-magnifying-glass fa-fw"></i></span></div>
+    
+    <div id="theme-switch"><span class="site-page" data-action="toggle-theme" title="切换配色"><i class="fa-solid fa-circle-half-stroke fa-fw"></i></span></div>
+    <div id="toggle-menu"><span class="site-page" data-action="toggle-mobile-menu" title="展开菜单"><i class="fa-solid fa-bars fa-fw"></i></span></div>
+  </div>
+</nav>
+
+
+  <div id="body-wrap" class="wrap-default">
+    
+  
+  
+  
+  
+
+
+
+
+
+  <header id="page-header" class="not-home-page nav-fixed-spacer" style="background-image:url('/media/images/default-top.svg')">
+    <div id="page-site-info">
+      <h1 id="site-title">#</h1>
+      
+    </div>
+    
+      
+<section class="main-hero-waves-area waves-area" aria-hidden="true">
+  <svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+      <path id="liushen-gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path>
+    </defs>
+    <g class="parallax">
+      <use xlink:href="#liushen-gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)"></use>
+      <use xlink:href="#liushen-gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"></use>
+      <use xlink:href="#liushen-gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"></use>
+      <use xlink:href="#liushen-gentle-wave" x="48" y="7" fill="#ffffff"></use>
+    </g>
+  </svg>
+</section>
+
+    
+  </header>
+
+
+
+
+    <main id="content-inner" class="layout layout-with-aside">
+      <div id="content" class="content">
+        
+<section class="tag-detail card-widget">
+  <div class="item-headline"><i class="fa-solid fa-tag"></i><span>标签： · 1 篇</span></div>
+  <div class="article-sort">
+    
+      
+      <div class="archive-year-block">
+        <h3 class="article-sort-item year"></h3>
+        <ul class="article-sort-list">
+          
+          <li class="article-sort-item no-article-cover">
+            
+            <div class="article-sort-item-info">
+              <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i> 2026-04-06T15:58:26+08:00</div>
+              <a class="article-sort-item-title" href="/post/quick-start/">Gridea Pro 完全上手指南 —— 从写作到发布，一篇搞定</a>
             </div>
-            
-<div class="post-container">
+          </li>
+          
+        </ul>
+      </div>
+      
     
-    <article class="post">
-        <a href="/post/quick-start/">
-            <h2 class="post-title">Gridea Pro 完全上手指南 —— 从写作到发布，一篇搞定</h2>
-        </a>
-        <div class="post-info">
-            <span>
-                2026-04-06
-            </span>
-            <span>
-                8 分钟阅读
-            </span>
-            
-            <a href="/tag/gridea-pro/" class="post-tag">
-                # Gridea Pro
-            </a>
-            
-            <a href="/tag/getting-started/" class="post-tag">
-                # 入门
-            </a>
-            
+  </div>
+</section>
+
+      </div>
+      
+        
+<aside id="aside-content" class="aside-content">
+  <div class="card-widget-wrap">
+    
+<div class="card-widget card-info">
+  <div class="card-content">
+    <div class="card-info-avatar">
+      <img class="avatar-img" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" alt="工具人ya的blog~" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/media/images/default-avatar.svg';">
+    </div>
+    <div class="card-info-data">
+      <div class="author-info-name">工具人ya的blog~</div>
+      <div class="author-info-description">一个热爱生活的开发者</div>
+    </div>
+    <div class="card-info-counts">
+      <div class="count-item">
+        <div class="headline">1</div>
+        <div class="length-num">文章</div>
+      </div>
+      <div class="count-item">
+        <div class="headline">4</div>
+        <div class="length-num">标签</div>
+      </div>
+      <div class="count-item">
+        <div class="headline" id="card-info-runtime">--</div>
+        <div class="length-num">天</div>
+      </div>
+    </div>
+    <div class="card-info-social">
+      
+<a class="social-icon" href="mailto:anda123367@gmail.com" title="Email" rel="noopener"><i class="fa-solid fa-envelope"></i></a>
+
+<a class="social-icon" href="https://github.com/1507045" title="GitHub" rel="noopener" target="_blank"><i class="fa-brands fa-github"></i></a>
+
+<a class="social-icon" href="https://space.bilibili.com/524659442" title="哔哩哔哩" rel="noopener" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
+<a class="social-icon" href="/atom.xml" title="RSS" rel="noopener"><i class="fa-solid fa-rss"></i></a>
+
+    </div>
+  </div>
+</div>
+
+    
+    
+<div class="card-widget card-announcement">
+  <div class="item-headline"><i class="fa-solid fa-bullhorn"></i><span>公告</span></div>
+  <div class="announcement-content">
+    
+    <p>欢迎来访</p>
+  </div>
+</div>
+
+    
+<div class="card-widget card-recent-post">
+  <div class="item-headline"><i class="fa-solid fa-history"></i><span>最新文章</span></div>
+  <div class="aside-list">
+    
+      
+        
+        <div class="aside-list-item">
+          
+          <a class="thumbnail no-cover" href="/post/quick-start/" title="Gridea Pro 完全上手指南 —— 从写作到发布，一篇搞定"><i class="fa-solid fa-file-lines"></i></a>
+          
+          <div class="content">
+            <a class="title" href="/post/quick-start/" title="Gridea Pro 完全上手指南 —— 从写作到发布，一篇搞定">Gridea Pro 完全上手指南 —— 从写作到发布，一篇搞定</a>
+            <time class="date">2026-04-06T15:58:26+08:00</time>
+          </div>
         </div>
         
-        <div class="post-abstract">
-            <p>这篇指南会带你一步一步熟悉 Gridea Pro 的界面和操作，从写第一篇文章到把博客发布到互联网上。</p>
-
-        </div>
-    </article>
+      
     
+  </div>
 </div>
 
-            
-<div class="pagination-container">
     
     
+<div class="card-widget card-tags">
+  <div class="item-headline"><i class="fa-solid fa-tags"></i><span>标签云</span></div>
+  <div class="card-tag-cloud">
+    
+      
+        
+          
+          <a href="/tag/gridea/" title="Gridea (1)" class="tag-cloud-item" data-count="1">Gridea<sup>1</sup></a>
+        
+      
+        
+          
+          <a href="/tag/gridea-pro/" title="Gridea Pro (5)" class="tag-cloud-item" data-count="5">Gridea Pro<sup>5</sup></a>
+        
+      
+        
+          
+          <a href="/tag/getting-started/" title="入门 (1)" class="tag-cloud-item" data-count="1">入门<sup>1</sup></a>
+        
+      
+        
+          
+          <a href="/tag//Weekly_Journal/" title="周记 (12)" class="tag-cloud-item" data-count="12">周记<sup>12</sup></a>
+        
+      
+    
+  </div>
 </div>
 
-            
-<div class="site-footer">
-    &lt;!-- 本站运行时间 --&gt;
-&lt;i class=&#34;fa fa-cog fa-spin fa-1x fa-fw&#34;&gt;&lt;/i&gt;&lt;!--动态齿轮图标--&gt;
-&lt;span&gt;本站已运行 &lt;span id=&#34;days&#34; style=&#34;font-weight:800; color:#ED712E;&#34;&gt; &lt;/span&gt; 天&lt;/span&gt;
-&lt;script&gt;
-  let s1 = &#39;2026-4-6&#39;;  //设置为你的建站时间
-  s1 = new Date(s1.replace(/-/g, &#34;/&#34;));
-  s2 = new Date();
-  let days = s2.getTime() - s1.getTime();
-  let number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
-  document.getElementById(&#39;days&#39;).innerHTML = number_of_days;
-&lt;/script&gt;
-    <a class="rss" href="/atom.xml" target="_blank">
-        <i class="ri-rss-line"></i> RSS
-    </a>
+    
+<div class="card-widget card-archives">
+  <div class="item-headline"><i class="fa-solid fa-archive"></i><span>归档</span></div>
+  <ul class="card-archive-list">
+    
+      
+        
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/#year-">
+            <span class="card-archive-list-date"></span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+        
+      
+    
+  </ul>
 </div>
 
-        </div>
+    
+<div class="card-widget card-webinfo">
+  <div class="item-headline"><i class="fa-solid fa-chart-pie"></i><span>网站统计</span></div>
+  <div class="webinfo">
+    <div class="webinfo-item"><span class="webinfo-label">文章</span><span class="webinfo-value">1</span></div>
+    <div class="webinfo-item"><span class="webinfo-label">标签</span><span class="webinfo-value">4</span></div>
+    <div class="webinfo-item"><span class="webinfo-label">分类</span><span class="webinfo-value">0</span></div>
+    <div class="webinfo-item"><span class="webinfo-label">运行</span><span class="webinfo-value" id="webinfo-runtime" data-since="2026-5-10">--</span><span class="webinfo-unit">天</span></div>
+    <div class="webinfo-item" id="webinfo-busuanzi" hidden>
+      <span class="webinfo-label">访客</span><span class="webinfo-value" id="busuanzi_value_site_uv">--</span>
     </div>
-<script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: inotes v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
-</body>
+    <div class="webinfo-item" id="webinfo-busuanzi-pv" hidden>
+      <span class="webinfo-label">浏览</span><span class="webinfo-value" id="busuanzi_value_site_pv">--</span>
+    </div>
+  </div>
+</div>
 
+  </div>
+</aside>
+
+      
+    </main>
+
+    <footer id="footer">
+      
+<div class="footer-wrap">
+  <div class="footer-icons" aria-hidden="true">
+    <span class="footer-decoration"><i class="fa-solid fa-feather"></i></span>
+  </div>
+  <div class="footer-content">
+    <div class="footer-info">
+      <p class="footer-site-name">工具人ya的blog~</p>
+      <p class="footer-tagline">Welcome to My Blog</p>
+      <div class="footer-social">
+        
+<a class="social-icon" href="mailto:anda123367@gmail.com" title="Email" rel="noopener"><i class="fa-solid fa-envelope"></i></a>
+
+<a class="social-icon" href="https://github.com/1507045" title="GitHub" rel="noopener" target="_blank"><i class="fa-brands fa-github"></i></a>
+
+<a class="social-icon" href="https://space.bilibili.com/524659442" title="哔哩哔哩" rel="noopener" target="_blank"><i class="fa-brands fa-bilibili"></i></a>
+<a class="social-icon" href="/atom.xml" title="RSS" rel="noopener"><i class="fa-solid fa-rss"></i></a>
+
+      </div>
+    </div>
+    <div class="footer-nav">
+      <a href="/">首页</a>
+      <a href="/archives/">归档</a>
+      <a href="/tags/">标签</a>
+      <a href="/categories/">分类</a>
+      <a href="/links/">友链</a>
+      <a href="/about/">关于</a>
+    </div>
+    
+    <div class="footer-extra"><a href="https://hexo.io">Powered by Gridea Pro</a></div>
+    
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">© 2024 - {YEAR} · Liushen</p>
+    
+  </div>
+</div>
+
+    </footer>
+  </div>
+
+  
+<div id="rightside" class="rightside">
+  <div id="rightside-config-hide">
+    <button class="rightside-btn" data-action="toggle-toc" title="目录" hidden id="rightside-toc"><i class="fa-solid fa-list"></i></button>
+    <button class="rightside-btn" data-action="toggle-theme" title="切换主题"><i class="fa-solid fa-circle-half-stroke"></i></button>
+  </div>
+  
+  <button class="rightside-btn scroll-to-top" data-action="scroll-to-top" title="回到顶部" hidden><i class="fa-solid fa-angle-up"></i></button>
+  
+</div>
+
+
+
+  
+    
+<div id="search-modal" class="search-modal" hidden>
+  <div class="search-modal-backdrop" data-action="close-search"></div>
+  <div class="search-modal-panel">
+    <div class="search-modal-header">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="search-input" type="search" placeholder="搜索文章标题、标签、内容…" autocomplete="off" spellcheck="false">
+      <button class="search-modal-close" data-action="close-search" type="button" aria-label="关闭搜索"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="search-modal-body">
+      <ul id="search-results" class="search-results"></ul>
+      <div id="search-empty" class="search-empty" hidden>未找到匹配的内容</div>
+      <div id="search-tip" class="search-tip">输入关键词开始搜索，按 Esc 关闭</div>
+    </div>
+  </div>
+</div>
+
+    
+<script id="search-index-data" type="application/json">
+{
+  "posts": [
+    
+      
+        
+      
+    
+  ]
+}
+</script>
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script id="liushen-config-data" type="application/json">
+{
+  "domain": "https://gjry.eu.org",
+  "siteName": "工具人ya的blog~",
+  "defaultTheme": "auto",
+  "tocEnable": true,
+  "codeCopy": true,
+  "readingProgress": true,
+  "scrollToTop": true,
+  "heatmapEnable": true,
+  "randomPostEnable": true,
+  "subtitleSpeed": 120,
+  "subtitleList": "既然选择远方，当不负青春，砥砺前行。\n青春由磨砺而出彩，人生因奋斗而升华！\n但行前路，不负韶华！\n每一个裂缝都是为透出光而努力",
+  "navMenuJson": "[]"
+}
+  </script>
+  <script>
+    (function(){
+      try { window.LIUSHEN_CONFIG = JSON.parse(document.getElementById('liushen-config-data').textContent); }
+      catch (e) { window.LIUSHEN_CONFIG = {}; }
+    })();
+  </script>
+  <script src="/scripts/main.js" defer></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+  
+  
+<script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: liushen v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
+</body>
 </html>

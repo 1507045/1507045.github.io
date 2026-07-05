@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人生重开模拟器</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Microsoft YaHei',sans-serif;background:linear-gradient(135deg,#1a1a2e,#16213e);min-height:100vh;padding:20px;color:#fff}
+.container{max-width:800px;margin:0 auto}
+h1{text-align:center;margin-bottom:30px;font-size:2.5em;text-shadow:2px 2px 4px rgba(0,0,0,.5)}
+.panel{background:rgba(255,255,255,.1);border-radius:15px;padding:20px;margin-bottom:20px;backdrop-filter:blur(10px)}
+.step-indicator{display:flex;justify-content:center;margin-bottom:20px;gap:10px}
+.step{padding:8px 20px;border-radius:20px;background:rgba(255,255,255,.1);font-size:.9em}
+.step.active{background:#4ade80;color:#000}
+.attr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.attr-item{background:rgba(0,0,0,.3);padding:15px;border-radius:10px}
+.attr-item label{display:block;margin-bottom:8px;font-weight:bold}
+.attr-item input[type=range]{width:100%;margin-bottom:5px}
+.attr-value{float:right;color:#4ade80}
+.points-info{text-align:center;font-size:1.2em;margin:20px 0}
+.talent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:15px}
+.talent-item{background:rgba(0,0,0,.3);padding:12px;border-radius:8px;cursor:pointer;border:2px solid transparent;transition:all .2s}
+.talent-item:hover{background:rgba(255,255,255,.1)}
+.talent-item.on{border-color:#4ade80;background:rgba(74,222,128,.2)}
+.talent-desc{font-size:.85em;color:#9ca3af;margin-top:5px}
+.talent-count{text-align:center;margin-bottom:10px;color:#fbbf24}
+button{width:100%;padding:15px;font-size:1.2em;border:none;border-radius:10px;cursor:pointer;transition:transform .2s;margin-top:10px}
+button:hover{transform:scale(1.02)}
+button:disabled{opacity:.5;cursor:default}
+.btn-start{background:linear-gradient(135deg,#4ade80,#22c55e);color:#000}
+.btn-next{background:linear-gradient(135deg,#60a5fa,#3b82f6);color:#fff}
+.btn-restart{background:linear-gradient(135deg,#60a5fa,#3b82f6);color:#fff}
+.btn-view{background:linear-gradient(135deg,#c084fc,#a855f7);color:#fff}
+.btn-review{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#000}
+.life-log{max-height:400px;overflow-y:auto;padding:10px}
+.log-entry{padding:10px;margin-bottom:10px;border-radius:8px;border-left:4px solid}
+.log-0{border-color:#4ade80;background:rgba(74,222,128,.1)}
+.log-1{border-color:#fbbf24;background:rgba(251,191,36,.1)}
+.log-2{border-color:#f87171;background:rgba(248,113,113,.1)}
+.log-3{border-color:#60a5fa;background:rgba(96,165,250,.1)}
+.log-4{border-color:#c084fc;background:rgba(192,165,224,.1)}
+.summary{text-align:center;padding:20px}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:20px 0}
+.stat-box{background:rgba(0,0,0,.3);padding:15px;border-radius:10px}
+.stat-num{font-size:2em;color:#4ade80}
+.death-box{text-align:center;padding:30px;background:rgba(248,113,113,.2);border-radius:15px;margin-bottom:20px}
+.death-box h3{font-size:1.5em;margin-bottom:10px}
+.info{color:#9ca3af;font-size:.9em;margin-top:10px}
+.review-log{max-height:500px;overflow-y:auto;padding:15px;background:rgba(0,0,0,.3);border-radius:10px;margin-bottom:20px}
+.review-row{padding:10px;margin-bottom:8px;border-radius:6px;border-left:3px solid;font-size:.95em}
+.tag{display:inline-block;background:rgba(192,165,224,.2);padding:5px 10px;border-radius:15px;margin:3px;font-size:.85em}
+.talent-box{background:rgba(0,0,0,.3);padding:15px;border-radius:10px;margin-bottom:20px}
+.talent-box h4{margin-bottom:10px;color:#c084fc}
+.choice-mask{
+  position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);
+  display:flex;align-items:center;justify-content:center;z-index:1000
+}
+.choice-box{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:20px;padding:30px;max-width:600px;width:90%;max-height:80vh;overflow-y:auto}
+.choice-box h3{text-align:center;margin-bottom:20px;color:#fbbf24}
+.choice-row{background:rgba(255,255,255,.1);padding:15px;border-radius:10px;margin-bottom:15px;cursor:pointer;border:2px solid transparent;transition:all .2s}
+.choice-row:hover{border-color:#4ade80;background:rgba(74,222,128,.1)}
+.choice-row strong{display:block;margin-bottom:8px;color:#fbbf24}
+.choice-eff{font-size:.85em;color:#9ca3af}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🎭 人生重开模拟器</h1>
+
+<div class="step-indicator">
+  <div class="step active" id="step1">1️⃣ 属性分配</div>
+  <div class="step" id="step2">2️⃣ 选择天赋</div>
+</div>
+
+<!-- 步骤1: 属性 -->
+<div id="panelAttr" class="panel">
+<h2>分配初始属性</h2>
+<p class="info">最多 20 点可分配，每项 1-10 点</p>
+<div class="attr-grid">
+  <div class="attr-item"><label>💪 体质 <span class="attr-value" id="v1">1</span></label><input type="range" id="a1" min="1" max="10" value="1"></div>
+  <div class="attr-item"><label>🧠 智力 <span class="attr-value" id="v2">1</span></label><input type="range" id="a2" min="1" max="10" value="1"></div>
+  <div class="attr-item"><label>💰 家境 <span class="attr-value" id="v3">1</span></label><input type="range" id="a3" min="1" max="10" value="1"></div>
+  <div class="attr-item"><label>✨ 颜值 <span class="attr-value" id="v4">1</span></label><input type="range" id="a4" min="1" max="10" value="1"></div>
+</div>
+<div class="points-info">已用点数：<span id="used">4</span> / 20 <span id="ptStatus" class="step active">✓ 可以继续</span></div>
+<button class="btn-next" id="btnNext" onclick="goTalent()">下一步：选择天赋</button>
+</div>
+
+<!-- 步骤2: 天赋 -->
+<div id="panelTalent" class="panel hide">
+<h2>🌟 选择天赋</h2>
+<p class="info">从随机 10 个中选最多 3 个</p>
+<div class="talent-count">已选：<span id="tCnt">0</span> / 3</div>
+<div class="talent-grid" id="talentRoot"></div>
+<button class="btn-start" id="btnStart" onclick="startGame()" disabled>开始新人生</button>
+<button class="btn-next" onclick="backAttr()">返回上一步</button>
+</div>
+
+<!-- 人生 -->
+<div id="panelLife" class="panel hide">
+<h2>📜 人生历程</h2>
+<div class="life-log" id="logRoot"></div>
+</div>
+
+<!-- 死亡 -->
+<div id="panelDeath" class="panel hide">
+<div class="death-box"><h3>💀 你已经去世了</h3><p id="deathWhy"></p></div>
+<button class="btn-review" onclick="showReview()">回看人生</button>
+</div>
+
+<!-- 回顾 -->
+<div id="panelReview" class="panel hide">
+<h2>📖 人生回顾</h2>
+<div class="talent-box"><h4>🌟 本局天赋</h4><div id="tTags"></div></div>
+<h3 style="margin-bottom:10px">📜 完整人生历程</h3>
+<div class="review-log" id="reviewRoot"></div>
+<button class="btn-view" onclick="showSummary()">查看总结</button>
+</div>
+
+<!-- 总结 -->
+<div id="panelSummary" class="panel hide">
+<div class="summary">
+<h2>🏁 人生总结</h2>
+<div class="summary-grid">
+  <div class="stat-box"><div class="stat-num" id="fAge">0</div><div>享年</div></div>
+  <div class="stat-box"><div class="stat-num" id="fScore">0</div><div>总分</div></div>
+  <div class="stat-box"><div class="stat-num" id="fTier">F</div><div>评级</div></div>
+</div>
+<p id="fComment" style="margin:20px 0;font-size:1.1em"></p>
+<button class="btn-restart" onclick="restart()">再来一次</button>
+</div>
+</div>
+</div>
+
+<!-- 选择弹窗 -->
+<div id="choiceModal" class="choice-mask hide">
+<div class="choice-box">
+<h3 id="choiceQ">🤔 面临选择</h3>
+<div id="choiceRoot"></div>
+</div>
+</div>
+
+<script>
+//=== 常量 ===
+const MAX_PT = 20, MAX_TL = 3;
+const ATTR_IDS = ['a1','a2','a3','a4'];
+const ATTR_KEYS = ['health','intel','wealth','charm'];
+
+// 天赋池
+const TALENTS = [
+  {id:'immunity',name:'🛡️ 百病不侵',desc:'不会死于疾病',eff:'noDie'},{id:'longev',name:'🐢 长寿基因',desc:'寿命+20年',eff:'long'},{id:'wealth',name:'💎 家财万贯',desc:'不因贫穷不幸',eff:'wp'},{id:'luck',name:'🍀 天选之子',desc:'好运概率翻倍',eff:'lk'},{id:'smart',name:'🎓 过目不忘',desc:'学习更容易成功',eff:'sm'},{id:'charm',name:'😍 人见人爱',desc:'人际关系顺利',eff:'ch'},{id:'sport',name:'🏃 运动健将',desc:'体质事件有利',eff:'sp'},{id:'peace',name:'☮️ 平安喜乐',desc:'50岁前少有坏事',eff:'pe'},{id:'revive',name:'🔥 天命所归',desc:'一次免死机会',eff:'rv'},{id:'biz',name:'💼 商业奇才',desc:'创业投资成功率高',eff:'bz'},
+  {id:'scholar',name:'📚 学霸附体',desc:'考试升学成功',eff:'sc'},{id:'artist',name:'🎨 艺术天才',desc:'艺术事件有利',eff:'ar'},{id:'leader',name:'👑 天生领袖',desc:'职场晋升快',eff:'ld'},{id:'healer',name:'💚 自愈体质',desc:'生病易康复',eff:'hl'},{id:'gambler',name:'🎰 赌神附体',desc:'赌博胜率高',eff:'gb'},{id:'survivor',name:'🙏 幸运儿',desc:'意外死亡-50%',eff:'sv'},{id:'charity',name:'💝 慈善家',desc:'好事有回报',eff:'ct'},{id:'hermit',name:'🧘 隐居达人',desc:'中年压力少',eff:'hm'},{id:'food',name:'🍳 美食家',desc:'体质易增长',eff:'fd'},{id:'social',name:'🎉 社交达人',desc:'结交贵人',eff:'so'},
+  {id:'work',name:'💻 工作狂',desc:'事业成功率高',eff:'wk'},{id:'travel',name:'✈️ 旅行家',desc:'旅行收益高',eff:'tv'},{id:'read',name:'📖 博览群书',desc:'智力增长快',eff:'rd'},{id:'fight',name:'🥊 格斗高手',desc:'冲突占优',eff:'ft'},{id:'tech',name:'🤖 科技达人',desc:'科技行业有利',eff:'tc'},{id:'nature',name:'🌿 自然之子',desc:'户外事件顺利',eff:'nt'},{id:'music',name:'🎵 音乐天才',desc:'音乐成功率高',eff:'ms'},{id:'write',name:'✍️ 作家命',desc:'写作顺利',eff:'wr'},{id:'coach',name:'🏅 金牌教练',desc:'运动健康有利',eff:'co'},{id:'invest',name:'📈 投资鬼才',desc:'理财收益高',eff:'iv'}
+];
+
+// 死亡事件
+const DEATHS = [
+  {txt:'因突发心脏病去世',min:40,type:'dis'},{txt:'遭遇车祸意外身亡',min:16,type:'acc'},{txt:'因病医治无效去世',min:30,type:'dis'},{txt:'寿终正寝，安详离世',min:70,type:'nat'},{txt:'在睡梦中平静离世',min:80,type:'nat'},{txt:'因癌症去世',min:35,type:'dis'},{txt:'因中风去世',min:50,type:'dis'},{txt:'因意外摔倒去世',min:60,type:'acc'},{txt:'因器官衰竭去世',min:75,type:'nat'},{txt:'无疾而终，走完圆满一生',min:90,type:'nat'}
+];
+
+// 分支选择事件
+const CHOICES = [
+  {age:[18,25],q:'高考填报志愿，你选了什么方向？',opts:[{t:'计算机专业',eff:{intel:2,wealth:1},add:'tech'},{t:'金融专业',eff:{wealth:2,intel:1},add:'invest'},{t:'艺术专业',eff:{charm:2,wealth:-1},add:'artist'}]},
+  {age:[22,35],q:'有一份高薪但压力大的工作，接受吗？',opts:[{t:'接受挑战',eff:{wealth:2,health:-1},add:'work'},{t:'拒绝，找轻松的',eff:{health:1,wealth:0},add:'hermit'}]},
+  {age:[25,40],q:'有人邀你一起创业，你会？',opts:[{t:'加入创业',eff:{wealth:3,health:-1},add:'biz'},{t:'婉拒',eff:{wealth:1,health:0}}]},
+  {age:[30,50],q:'发现投资机会但需大量资金，你会？',opts:[{t:'贷款投资',eff:{wealth:4,health:-1},add:'gambler'},{t:'放弃',eff:{wealth:0,health:0}},{t:'小额尝试',eff:{wealth:1,health:0},add:'invest'}]},
+  {age:[20,45],q:'遇到受伤的小动物，你会？',opts:[{t:'救助它',eff:{charm:1,wealth:-1},add:'nature'},{t:'无视',eff:{charm:-1,health:0}}]},
+  {age:[15,30],q:'学校组织才艺表演，参加吗？',opts:[{t:'歌唱比赛',eff:{charm:2},add:'music'},{t:'演讲比赛',eff:{intel:2,charm:1},add:'write'},{t:'不参加',eff:{intel:1,charm:0}}]}
+];
+
+//=== 状态 ===
+let S = {
+  attr:{health:1,intel:1,wealth:1,charm:1},
+  pick:[],avail:[],talents:[],
+  logs:[],dieAge:0,dieWhy:'',choiceUsed:false
+};
+
+let reviveUsed = false;
+
+//=== DOM 快捷 ===
+const $ = id => document.getElementById(id);
+const hide = el => el.classList.add('hide');
+const show = el => el.classList.remove('hide');
+
+//=== 工具 ===
+const rd = (arr, n=1) => [...arr].sort(()=>Math.random()-.5).slice(0,n);
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
+const hasEff = eff => S.talents.some(id=>{let t=TALENTS.find(x=>x.id===id);return t&&t.eff===eff});
+const talentName = id => {let t=TALENTS.find(x=>x.id===id);return t?t.name:''};
+
+//=== 属性 ===
+function updPt(){
+  let total=0;
+  ATTR_IDS.forEach((id,i)=>{
+    let v=parseInt($(id).value);
+    $(`v${i+1}`).textContent=v;
+    total+=v;
+  });
+  $('used').textContent=total;
+  let ok=total>=4&&total<=MAX_PT;
+  $('ptStatus').textContent=ok?'✓ 可以继续':'✗ '+(total>MAX_PT?'超出上限！':'至少4点');
+  $('ptStatus').className=ok?'step active':'step';
+  $('ptStatus').style.background=ok?'#4ade80':'#f87171';
+  $('ptStatus').style.color='#000';
+  $('btnNext').disabled=!ok;
+}
+function limitSlider(id){
+  let others=ATTR_IDS.filter(x=>x!==id).reduce((s,x)=>s+parseInt($(x).value),0);
+  let max=MAX_PT-others;
+  let v=parseInt($(id).value);
+  if(v>max) $(id).value=Math.max(1,max);
+}
+ATTR_IDS.forEach(id=>$(id).addEventListener('input',function(){limitSlider(id);updPt()}));
+
+//=== 天赋 ===
+function goTalent(){
+  if(parseInt($('used').textContent)>MAX_PT) return alert('属性超过上限！');
+  S.avail=rd(TALENTS,10);S.pick=[];
+  $('tCnt').textContent='0';
+  let root=$('talentRoot');root.innerHTML='';
+  S.avail.forEach(t=>{
+    let d=document.createElement('div');
+    d.className='talent-item';d.id='tl-'+t.id;
+    d.innerHTML=`<strong>${t.name}</strong><div class="talent-desc">${t.desc}</div>`;
+    d.onclick=()=>{
+      let idx=S.pick.indexOf(t.id);
+      if(idx>=0){S.pick.splice(idx,1);d.classList.remove('on')}
+      else if(S.pick.length<MAX_TL){S.pick.push(t.id);d.classList.add('on')}
+      $('tCnt').textContent=S.pick.length;
+      $('btnStart').disabled=S.pick.length===0;
+    };
+    root.appendChild(d);
+  });
+  hide($('panelAttr'));show($('panelTalent'));
+  $('step1').classList.remove('active');$('step2').classList.add('active');
+}
+function backAttr(){hide($('panelTalent'));show($('panelAttr'));$('step1').classList.add('active');$('step2').classList.remove('active')}
+
+//=== 游戏 ===
+function startGame(){
+  S.attr={health:parseInt($('a1').value),intel:parseInt($('a2').value),wealth:parseInt($('a3').value),charm:parseInt($('a4').value)};
+  S.talents=[...S.pick];S.logs=[];S.dieAge=0;S.dieWhy='';S.choiceUsed=false;reviveUsed=false;
+  hide($('panelTalent'));show($('panelLife'));
+  runLife();
+}
+async function runLife(){
+  $('logRoot').innerHTML='';
+  addLog(0,'你出生了！👶 这是个平凡而美好的一天。',0);
+  for(let age=1;;age++){
+    await sleep(180);
+
+    // 分支选择 (一次)
+    if(!S.choiceUsed&&Math.random()<.15){
+      let ev=CHOICES.find(c=>age>=c.age[0]&&age<=c.age[1]);
+      if(ev){
+        let ch=await showChoice(ev);
+        if(ch){
+          if(ch.eff) for(let[k,v]of Object.entries(ch.eff)) S.attr[k]=Math.max(0,(S.attr[k]||0)+v);
+          if(ch.add&&!S.talents.includes(ch.add)){S.talents.push(ch.add);addLog(0,`🌟 获得了天赋：${talentName(ch.add)}`,4)}
+          S.choiceUsed=true;
+        }
+      }
+    }
+
+    let ev=genEvent(age);
+    addLog(age,ev.txt,ev.typ);
+    if(ev.death){S.dieAge=age;S.dieWhy=ev.txt.replace('💀','').trim();await sleep(400);dieEnd();return}
+
+    if(chkDeath(age)){
+      let d=getDeath(age);S.dieAge=age;S.dieWhy=d.txt;
+      if(hasEff('rv')&&!reviveUsed&&age<100){
+        reviveUsed=true;addLog(age,'🔥 你本应死去，但天命让你奇迹般活了下来！',4);
+        let idx=S.talents.indexOf('revive');if(idx>=0)S.talents.splice(idx,1);
+        continue;
+      }
+      addLog(age,d.txt+' 💀',2);await sleep(400);dieEnd();return
+    }
+  }
+}
+
+//=== 分支选择弹窗 ===
+function showChoice(ev){
+  return new Promise(r=>{
+    $('choiceQ').textContent='🤔 '+ev.q;
+    let root=$('choiceRoot');root.innerHTML='';
+    ev.opts.forEach((o,i)=>{
+      let d=document.createElement('div');d.className='choice-row';
+      let effs=[];
+      if(o.eff) for(let[k,v]of Object.entries(o.eff)){
+        let em={health:'💪',intel:'🧠',wealth:'💰',charm:'✨'}[k]||'';
+        effs.push(`${em}${k}:${v>=0?'+':''}${v}`);
+      }
+      if(o.add) effs.push(`获得：${talentName(o.add)}`);
+      d.innerHTML=`<strong>选项${i+1}: ${o.t}</strong><div class="choice-eff">${effs.join(' | ')}</div>`;
+      d.onclick=()=>{hide($('choiceModal'));r(o)};
+      root.appendChild(d);
+    });
+    show($('choiceModal'));
+  });
+}
+
+//=== 事件生成 ===
+function genEvent(age){
+  let pools={
+    6:[{t:'出生在普通家庭',ty:0},{t:'幼儿园展现聪明才智',ty:1},{t:'体质弱常感冒',ty:2},{t:'长得可爱收零食',ty:0},{t:'公园迷路被送回',ty:2},{t:'学会第一首古诗',ty:0},{t:'摔跤哭一天',ty:2},{t:'交到第一个好朋友',ty:0},{t:'画作贴展示墙',ty:1},{t:'偷吃糖果被罚',ty:2},{t:'第一次去动物园',ty:0},{t:'学会骑自行车',ty:1}],
+    12:[{t:'考上重点小学',ty:1},{t:'交到好朋友',ty:0},{t:'成绩差被批评',ty:2},{t:'运动会第一名',ty:1},{t:'发现科学兴趣',ty:1},{t:'被选为班干部',ty:1},{t:'考试作弊被通报',ty:2},{t:'参加合唱团',ty:0},{t:'作文全市一等奖',ty:1},{t:'和同桌打架请家长',ty:2},{t:'帮助困难同学',ty:0},{t:'第一次考满分',ty:1},{t:'迷上课外书',ty:0},{t:'数学竞赛三等奖',ty:1}],
+    18:[{t:'进入叛逆期与父母吵架',ty:2},{t:'暗恋同学',ty:3},{t:'考上理想高中',ty:1},{t:'沉迷游戏成绩下降',ty:2},{t:'思考未来职业',ty:3},{t:'第一次收到情书',ty:3},{t:'高考发挥失常',ty:2},{t:'成为篮球队主力',ty:1},{t:'和好朋友闹翻',ty:2},{t:'第一次打工赚钱',ty:0},{t:'参加文艺汇演',ty:1},{t:'开始追星',ty:0},{t:'高考超常发挥',ty:1},{t:'学会弹吉他',ty:1}],
+    30:[{t:'考上大学独立生活',ty:1},{t:'找到第一份工作',ty:0},{t:'遇到心仪的另一半',ty:3},{t:'投资失败亏钱',ty:2},{t:'创业成功赚第一桶金',ty:1},{t:'第一次出国旅游',ty:0},{t:'被裁员失业3个月',ty:2},{t:'遇到人生导师',ty:1},{t:'买了第一辆车',ty:0},{t:'分手伤心',ty:2},{t:'升职成为负责人',ty:1},{t:'学习理财收益不错',ty:1},{t:'生大病花光积蓄',ty:2},{t:'遇到创业伙伴',ty:1},{t:'买了第一套房子',ty:1},{t:'考研深造',ty:1}],
+    50:[{t:'结婚组建家庭',ty:0},{t:'有了孩子',ty:1},{t:'升职加薪成中层',ty:1},{t:'压力大失眠',ty:2},{t:'实现财务自由',ty:1},{t:'孩子考上重点大学',ty:1},{t:'夫妻感情出问题',ty:2},{t:'开始健身',ty:0},{t:'诊断出慢性病',ty:2},{t:'事业巅峰成精英',ty:1},{t:'搬到乡下生活',ty:0},{t:'开始做慈善',ty:1},{t:'父母相继去世',ty:2},{t:'实现年轻梦想',ty:0},{t:'学习新技能',ty:0}],
+    70:[{t:'孩子长大享受生活',ty:0},{t:'退休环游世界',ty:1},{t:'身体出问题需吃药',ty:2},{t:'成为爷爷奶奶',ty:0},{t:'回顾人生感到满足',ty:4},{t:'学习书法作品展出',ty:0},{t:'参加老年大学',ty:0},{t:'开始写日记',ty:3},{t:'老伴去世孤独',ty:2},{t:'养宠物成伙伴',ty:0},{t:'参加家族聚会',ty:0},{t:'学习使用智能手机',ty:1},{t:'做义工帮助他人',ty:1},{t:'研究养生改善',ty:0}],
+    150:[{t:'精神矍铄常锻炼',ty:0},{t:'老友离世孤独',ty:2},{t:'成为最长寿受人尊敬',ty:1},{t:'写回忆录',ty:3},{t:'安详离世',ty:4,death:1},{t:'公园散步下棋',ty:0},{t:'曾孙出生',ty:1},{t:'思考人生意义',ty:3},{t:'收到长寿津贴',ty:0},{t:'被媒体报道成名人',ty:1},{t:'学习冥想内心平静',ty:0},{t:'睡梦中平静离世',ty:4,death:1}]
+  };
+  let pool=Object.entries(pools).find(([k])=>age<=parseInt(k));
+  pool=pool?pool[1]:pools[150];
+  let r=Math.random(),ev=pool[Math.floor(Math.random()*pool.length)];
+
+  if(hasEff('pe')&&age<50&&ev.ty===2&&Math.random()<.8) ev=pool.find(e=>e.ty===0||e.ty===1)||ev;
+
+  let th=.1;if(hasEff('lk')) th*=.2;
+  if(r<th&&S.attr.intel>=8) return{txt:'智商超群参加国际奥赛获奖🏆',ty:1};
+  if(r<th*1.5&&S.attr.wealth>=8) return{txt:'家里中彩票暴富💰',ty:1};
+  if(r<th*1.5&&S.attr.health>=8) return{txt:'身体倍儿棒破运动会记录💪',ty:1};
+  if(r<th*1.5&&S.attr.charm>=8) return{txt:'被星探发现成网红✨',ty:1};
+  if(hasEff('bz')&&age>=25&&age<=45&&Math.random()<.3) return{txt:'创业项目大获成功获投资💼',ty:1};
+
+  return{txt:ev.t,typ:ev.ty,death:ev.death||0};
+}
+
+//=== 死亡 ===
+function chkDeath(age){
+  let ea=hasEff('long')?age-20:age;
+  if(age<50) return Math.random()<Math.pow(ea/150,8)*.1;
+  let r=Math.pow(ea/120,4)+(10-S.attr.health)/30;
+  return hasEff('noDie')?Math.random()<r*.5:Math.random()<r;
+}
+function getDeath(age){
+  let a=DEATHS.filter(d=>age>=d.min);
+  if(hasEff('noDie')) a=a.filter(d=>d.type!=='dis');
+  if(!a.length) a=DEATHS.filter(d=>d.type==='nat');
+  return a.length?a[Math.floor(Math.random()*a.length)]:DEATHS[DEATHS.length-1];
+}
+
+//=== UI ===
+function addLog(age,txt,typ){
+  S.logs.push({age,txt,typ});
+  let el=$('logRoot'),d=document.createElement('div');
+  d.className='log-entry log-'+typ;
+  d.textContent=age>0?age+'岁：'+txt:txt;
+  el.appendChild(d);el.scrollTop=el.scrollHeight;
+}
+function dieEnd(){hide($('panelLife'));show($('panelDeath'));$('deathWhy').textContent='死因：'+S.dieWhy}
+
+function showReview(){
+  hide($('panelDeath'));show($('panelReview'));
+  // 天赋
+  let tg=$('tTags');tg.innerHTML='';
+  S.talents.forEach(id=>{let t=TALENTS.find(x=>x.id===id);if(t){let s=document.createElement('span');s.className='tag';s.textContent=t.name;tg.appendChild(s)}});
+  // 日志
+  let LOG_COLORS=['#4ade80','#fbbf24','#f87171','#60a5fa','#c084fc'];
+  let LOG_BG=['rgba(74,222,128,.1)','rgba(251,191,36,.1)','rgba(248,113,113,.1)','rgba(96,165,250,.1)','rgba(192,165,224,.1)'];
+  let rl=$('reviewRoot');rl.innerHTML='';
+  S.logs.forEach(e=>{
+    let d=document.createElement('div');
+    d.className='review-row';
+    d.style.borderColor=LOG_COLORS[e.typ]||'#fff';
+    d.style.background=LOG_BG[e.typ]||'rgba(255,255,255,.1)';
+    d.textContent=(e.age>0?e.age+'岁：':'出生：')+e.txt;
+    rl.appendChild(d);
+  });
+}
+
+function showSummary(){
+  hide($('panelReview'));show($('panelSummary'));
+  let score=S.dieAge+(S.attr.health+S.attr.intel+S.attr.wealth+S.attr.charm)*2+S.logs.filter(e=>e.typ===1).length*5+S.logs.filter(e=>e.typ===4).length*20-S.logs.filter(e=>e.typ===2).length*3;
+  score=Math.max(0,score);
+  let tier=score>=200?'SSS':score>=150?'SS':score>=100?'S':score>=70?'A':score>=50?'B':score>=30?'C':'D';
+  let cmt={'SSS':'传奇人生！将被后人传颂🌟','SS':'完美人生！几乎无遗憾🎉','S':'精彩人生！充实有意义✨','A':'不错的人生！很多美好回忆😊','B':'普通人生！平淡是真😌','C':'略显遗憾！每条路都值得走😐','D':'困难模式！辛苦了😢'};
+  $('fAge').textContent=S.dieAge;$('fScore').textContent=score;$('fTier').textContent=tier;$('fComment').textContent=cmt[tier]||'';
+}
+
+function restart(){
+  hide($('panelSummary'));show($('panelAttr'));
+  $('step1').classList.add('active');$('step2').classList.remove('active');
+  S.pick=[];S.talents=[];
+  $('tCnt').textContent='0';$('btnStart').disabled=true;
+  updPt();
+}
+
+// 初始化
+updPt();
+</script>
+</body>
+</html>

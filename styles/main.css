@@ -44,104 +44,6 @@ a:active {
 .sm_margin {
   margin: -20px 0 -15px !important;
 }
-.reward {
-  padding: 5px 0;
-}
-.reward .reward-notice {
-  font-size: 14px;
-  line-height: 14px;
-  margin: 15px auto;
-  text-align: center;
-}
-.reward .reward-button {
-  font-size: 28px;
-  line-height: 58px;
-  position: relative;
-  display: block;
-  width: 60px;
-  height: 60px;
-  margin: 0 auto;
-  padding: 0;
-  -webkit-user-select: none;
-  text-align: center;
-  vertical-align: middle;
-  color: #fff;
-  border: 1px solid #f1b60e;
-  border-radius: 50%;
-  background: #fccd60;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fccd60), color-stop(100%, #fbae12), color-stop(100%, #2989d8), color-stop(100%, #207cca));
-  background: -webkit-linear-gradient(top, #fccd60 0, #fbae12 100%, #2989d8 100%, #207cca 100%);
-  background: linear-gradient(to bottom, #fccd60 0, #fbae12 100%, #2989d8 100%, #207cca 100%);
-}
-.reward .reward-code {
-  position: absolute;
-  top: -220px;
-  left: 50%;
-  display: none;
-  width: 350px;
-  height: 200px;
-  margin-left: -175px;
-  padding: 15px;
-  border: 1px solid #e6e6e6;
-  background: #fff;
-  box-shadow: 0 1px 1px 1px #efefef;
-}
-.reward .reward-button:hover .reward-code {
-  display: block;
-}
-.reward .reward-code span {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-}
-.reward .reward-code span.alipay-code {
-  float: left;
-}
-.reward .reward-code span.alipay-code a {
-  padding: 0;
-}
-.reward .reward-code span.wechat-code {
-  float: right;
-}
-.reward .reward-code img {
-  display: inline-block;
-  float: left;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  border: 0;
-}
-.reward .reward-code b {
-  font-size: 14px;
-  line-height: 26px;
-  display: block;
-  margin: 0;
-  text-align: center;
-  color: #666;
-}
-.reward .reward-code b.notice {
-  line-height: 2rem;
-  margin-top: -1rem;
-  color: #999;
-}
-.reward .reward-code:after,
-.reward .reward-code:before {
-  position: absolute;
-  content: '';
-  border: 10px solid transparent;
-}
-.reward .reward-code:after {
-  bottom: -19px;
-  left: 50%;
-  margin-left: -10px;
-  border-top-color: #fff;
-}
-.reward .reward-code:before {
-  bottom: -20px;
-  left: 50%;
-  margin-left: -10px;
-  border-top-color: #e6e6e6;
-}
 .header {
   max-width: 800px;
   padding: 6.3em 0 4em;
@@ -3680,4 +3582,58 @@ a:active {
   margin: 0;
   overflow: visible;
   clip: auto;
+}
+/* ════════════════════════════════════════════════
+   评论区（综合自 Mobile 主题：Gridea Pro 原生挂载点）
+   ════════════════════════════════════════════════ */
+.doc_comments {
+  margin-top: 2.5em;
+  padding-top: 1.5em;
+  border-top: 1px dashed #ddd;
+}
+.doc_comments .comments-title {
+  font-size: 1.05em;
+  font-weight: 600;
+  color: #444;
+  margin: 0 0 1em 0;
+}
+.doc_comments #gridea-comments {
+  width: 100%;
+}
+.doc_comments .comments-placeholder {
+  color: #999;
+  font-size: 0.9em;
+  padding: 1em 0;
+}
+/* Gitalk 评论框文字与链接跟随主题 */
+.doc_comments .gt-container .gt-header-textarea {
+  color: #444;
+}
+.doc_comments .gt-container a {
+  color: #e42b2b;
+}
+.doc_comments .gt-container a:hover {
+  color: #c02626;
+}
+/* ════════════════════════════════════════════════
+   404 页面（风格与 .post 卡片保持一致）
+   ════════════════════════════════════════════════ */
+.post.error-404 {
+  text-align: center;
+  padding: 60px 30px;
+}
+.post.error-404 .post_title h2 {
+  font-size: 3.5em;
+  letter-spacing: 0.1em;
+  color: #e42b2b;
+  margin-bottom: 20px;
+}
+.post.error-404 .post_content a {
+  color: #e42b2b;
+}
+.post.error-404 .post_content a:hover {
+  color: #c02626;
+}
+.post.error-404 .tags_info {
+  margin-top: 1em;
 }

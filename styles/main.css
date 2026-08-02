@@ -258,20 +258,13 @@ input { font-family: inherit; }
 /* ── 背景音乐播放器（圣巢·灵音，网易云外链） ────────────── */
 .music-player {
   margin-top: 16px;
-  padding: 10px;
+  padding: 6px;
   background: var(--bg-hover);
   border: 1px solid var(--border);
   border-radius: 10px;
 }
-.music-title {
-  display: block;
-  font-size: 12.5px;
-  color: var(--text-dim);
-  letter-spacing: .06em;
-  margin-bottom: 8px;
-}
 .music-frame {
-  width: 100% !important;   /* 侧栏 250px，iframe 原生 330px，强制铺满 */
+  width: 100% !important;   /* 侧栏 250px，iframe 原生 280px，强制铺满 */
   height: 66px;
   border: 0;
   display: block;

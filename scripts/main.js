@@ -136,60 +136,79 @@
   });
   if (input) input.addEventListener('input', function () { render(input.value); });
 
-  /* ── 背景音乐播放器：空洞骑士主题曲 ── */
-  var musicBtn = document.getElementById('music-toggle');
-  var musicState = document.getElementById('music-state');
-  if (musicBtn) {
-    var audio = new Audio('/media/back_music.mp3');
-    audio.loop = true;
-    musicBtn.addEventListener('click', function () {
-      if (audio.paused) {
-        audio.play().then(function () {
-          musicBtn.classList.add('is-playing');
-          if (musicState) musicState.textContent = '播放中';
-        }).catch(function () {
-          if (musicState) musicState.textContent = '无法播放';
-        });
-      } else {
-        audio.pause();
-        musicBtn.classList.remove('is-playing');
-        if (musicState) musicState.textContent = '已暂停';
-      }
-    });
-  }
-
-  /* ── 圣巢背景图：随机 / 固定一张菜单主题图 + Ken Burns 动画 ── */
-  var BG_IMAGES = [
-    '/media/images/480px-Menu_Theme_Classic_Current.png',
-    '/media/images/480px-Menu_Theme_Godmaster.png',
-    '/media/images/480px-Menu_Theme_Hidden_Dreams.png',
-    '/media/images/480px-Menu_Theme_Lifeblood.png',
-    '/media/images/480px-Menu_Theme_The_Grimm_Troupe.png',
-    '/media/images/480px-Menu_Theme_Void.png',
-    '/media/images/480px-Menu_Theme_Voidheart.png'
+  /* ── 圣巢背景图：从 GitHub photo 目录随机一张 + Ken Burns 动画 ──
+     图片存于仓库 1507045/1507045.github.io 的 photo 目录（master 分支），
+     通过 GitHub API 实时枚举目录，经 jsDelivr CDN 加载；API 失败时回退到内置图列表。 */
+  var BG_BASE = 'https://cdn.jsdelivr.net/gh/1507045/1507045.github.io@master/photo/';
+  var BG_FALLBACK = [
+    '480px-Menu_Theme_Classic_Current.png',
+    '480px-Menu_Theme_Godmaster.png',
+    '480px-Menu_Theme_Hidden_Dreams.png',
+    '480px-Menu_Theme_Lifeblood.png',
+    '480px-Menu_Theme_The_Grimm_Troupe.png',
+    '480px-Menu_Theme_Void.png',
+    '480px-Menu_Theme_Voidheart.png'
   ];
   var scene = document.getElementById('bg-scene');
   if (scene) {
+    function applyBg(url) {
+      scene.setAttribute('data-kb', String(Math.floor(Math.random() * 7)));
+      var preload = new Image();
+      preload.onload = function () {
+        scene.style.backgroundImage = 'url("' + url + '")';
+        scene.classList.add('is-visible');
+      };
+      preload.onerror = function () { scene.classList.add('is-visible'); };
+      preload.src = url;
+    }
+    /* 目录列表缓存：避免每次访问都请求 GitHub API（匿名限流 60 次/小时/IP） */
+    var PHOTO_CACHE_KEY = 'pf-bg-photo-list';
+    var PHOTO_CACHE_TTL = 6 * 60 * 60 * 1000; // 6 小时
+    function readCache() {
+      try {
+        var raw = localStorage.getItem(PHOTO_CACHE_KEY);
+        if (raw) {
+          var obj = JSON.parse(raw);
+          if (obj && obj.time && Date.now() - obj.time < PHOTO_CACHE_TTL && Array.isArray(obj.files)) {
+            return obj.files;
+          }
+        }
+      } catch (e) { /* ignore */ }
+      return null;
+    }
+    function writeCache(files) {
+      try { localStorage.setItem(PHOTO_CACHE_KEY, JSON.stringify({ time: Date.now(), files: files })); } catch (e) { /* ignore */ }
+    }
+    function randomName(list) {
+      return list[Math.floor(Math.random() * list.length)];
+    }
     var mode = scene.getAttribute('data-mode') || 'random';
     var custom = (scene.getAttribute('data-image') || '').trim();
-    var bgUrl, bgIdx;
     if (mode === 'fixed' && custom) {
-      bgUrl = custom;
-      bgIdx = BG_IMAGES.indexOf(custom);
-    } else if (mode === 'fixed') {
-      bgUrl = BG_IMAGES[0];
-      bgIdx = 0;
+      applyBg(custom);
     } else {
-      bgIdx = Math.floor(Math.random() * BG_IMAGES.length);
-      bgUrl = BG_IMAGES[bgIdx];
+      var cached = readCache();
+      if (cached && cached.length) {
+        applyBg(BG_BASE + encodeURIComponent(randomName(cached)));
+      } else {
+        fetch('https://api.github.com/repos/1507045/1507045.github.io/contents/photo')
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (list) {
+            var files = [];
+            if (Array.isArray(list)) {
+              list.forEach(function (f) {
+                if (f && f.type === 'file' && /\.(png|jpe?g|webp|gif)$/i.test(f.name)) {
+                  files.push(f.name);
+                }
+              });
+            }
+            if (files.length) writeCache(files);
+            applyBg(BG_BASE + encodeURIComponent(files.length ? randomName(files) : randomName(BG_FALLBACK)));
+          })
+          .catch(function () {
+            applyBg(BG_BASE + encodeURIComponent(randomName(BG_FALLBACK)));
+          });
+      }
     }
-    scene.setAttribute('data-kb', bgIdx >= 0 ? String(bgIdx) : '0');
-    var preload = new Image();
-    preload.onload = function () {
-      scene.style.backgroundImage = 'url("' + bgUrl + '")';
-      scene.classList.add('is-visible');
-    };
-    preload.onerror = function () { scene.classList.add('is-visible'); };
-    preload.src = bgUrl;
   }
 })();

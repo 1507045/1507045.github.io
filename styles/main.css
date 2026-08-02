@@ -955,6 +955,14 @@ input { font-family: inherit; }
   color: var(--text);
   min-width: 0;
 }
+.topbar-logo .logo-img {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--border-strong);
+}
 .topbar-logo .logo-text {
   font-family: var(--font-serif);
   font-weight: 700;
@@ -1030,6 +1038,15 @@ input { font-family: inherit; }
 .drawer-item:hover { color: var(--accent); }
 .drawer-item .icon { font-size: 15px; color: var(--accent); }
 .drawer-music { flex-direction: column; align-items: stretch; gap: 4px; padding: 12px 2px 6px; }
+
+/* 二级菜单打开时，一级菜单（顶栏）内容变淡 */
+.topbar .topbar-logo .logo-img,
+.topbar .topbar-logo .logo-text,
+.topbar .topbar-toggle .hamburger {
+  transition: opacity .25s ease;
+}
+.topbar.is-menu-open .topbar-logo { opacity: .45; }
+.topbar.is-menu-open .topbar-toggle .hamburger { opacity: .55; }
 
 /* ── 响应式 ──────────────────────────────────────────────── */
 @media (max-width: 980px) {

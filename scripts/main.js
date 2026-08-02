@@ -6,16 +6,26 @@
   var navBtn = document.getElementById('nav-toggle');
   var drawer = document.getElementById('top-drawer');
   if (navBtn && drawer) {
+    var topbar = document.querySelector('.topbar');
+    /* 抽屉顶部对齐顶栏底部（顶栏实际高度由内容决定） */
+    function setDrawerPos() {
+      if (!topbar) return;
+      drawer.style.top = topbar.offsetHeight + 'px';
+      drawer.style.maxHeight = 'calc(100vh - ' + topbar.offsetHeight + 'px)';
+    }
     function closeDrawer() {
       drawer.hidden = true;
       navBtn.classList.remove('is-open');
       navBtn.setAttribute('aria-expanded', 'false');
+      if (topbar) topbar.classList.remove('is-menu-open');
     }
     navBtn.addEventListener('click', function () {
       if (drawer.hidden) {
+        setDrawerPos();
         drawer.hidden = false;
         navBtn.classList.add('is-open');
         navBtn.setAttribute('aria-expanded', 'true');
+        if (topbar) topbar.classList.add('is-menu-open');
       } else {
         closeDrawer();
       }

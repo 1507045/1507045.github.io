@@ -2,26 +2,28 @@
 (function () {
   'use strict';
 
-  /* ── 主题切换（深渊 ⇄ 苍白） ── */
-  var toggle = document.getElementById('theme-toggle');
-  var label = document.getElementById('theme-toggle-label');
-
-  function applyLabel() {
-    if (!label) return;
-    var theme = document.documentElement.getAttribute('data-theme');
-    label.textContent = theme === 'dark' ? '切换为苍白（亮色）' : '切换为深渊（暗色）';
-  }
-
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      var next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('pf-theme', next); } catch (e) { /* ignore */ }
-      applyLabel();
+  /* ── 移动端二级菜单（汉堡开合） ── */
+  var navBtn = document.getElementById('nav-toggle');
+  var drawer = document.getElementById('top-drawer');
+  if (navBtn && drawer) {
+    function closeDrawer() {
+      drawer.hidden = true;
+      navBtn.classList.remove('is-open');
+      navBtn.setAttribute('aria-expanded', 'false');
+    }
+    navBtn.addEventListener('click', function () {
+      if (drawer.hidden) {
+        drawer.hidden = false;
+        navBtn.classList.add('is-open');
+        navBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        closeDrawer();
+      }
+    });
+    drawer.addEventListener('click', function (e) {
+      if (e.target.closest('a, button')) closeDrawer();
     });
   }
-  applyLabel();
 
   /* ── 阅读进度条（仅文章页） ── */
   var bar = document.getElementById('reading-progress');
@@ -124,8 +126,10 @@
   }
 
   var trigger = document.getElementById('search-trigger');
+  var drawerSearch = document.getElementById('drawer-search-trigger');
   var closeBtn = document.getElementById('search-close');
   if (trigger) trigger.addEventListener('click', openSearch);
+  if (drawerSearch) drawerSearch.addEventListener('click', openSearch);
   if (closeBtn) closeBtn.addEventListener('click', closeSearch);
   if (mask) {
     mask.addEventListener('click', function (e) { if (e.target === mask) closeSearch(); });

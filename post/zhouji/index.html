@@ -28,15 +28,8 @@
     <script>
     (function () {
       try {
-        var saved = localStorage.getItem('pf-theme');
-        var preset = "light";
-        var theme = (saved === 'dark' || saved === 'light') ? saved
-          : (preset === 'dark' || preset === 'light' ? preset
-          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {
         document.documentElement.setAttribute('data-theme', 'dark');
-      }
+      } catch (e) {}
       try {
         document.documentElement.setAttribute('data-accent', "soul");
         var accent = "#2bbc8a";
@@ -118,9 +111,6 @@
             <span class="icon">⌕</span> 搜索文章与标签
         </button>
         
-        <button type="button" class="sidebar-btn" id="theme-toggle">
-            <span class="icon">◐</span> <span id="theme-toggle-label">切换主题</span>
-        </button>
     </div>
 
     
@@ -128,6 +118,50 @@
         <iframe class="music-frame" frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=1309394512&auto=0&height=66"></iframe>
     </div>
 </aside>
+
+
+<div class="topbar">
+    <a class="topbar-logo" href="/">
+    
+    <img class="logo-img" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" alt="工具人ya的blog~">
+    
+    <span class="logo-text">工具人ya的blog~</span>
+</a>
+    <button type="button" class="topbar-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+    </button>
+</div>
+
+
+<div class="top-drawer" id="top-drawer" hidden>
+    <nav class="drawer-nav" aria-label="站点导航">
+        
+        
+        <a href="/">首页</a>
+        
+        <a href="/post">博客</a>
+        
+        <a href="/memos">闪念</a>
+        
+        <a href="/archives">归档</a>
+        
+        <a href="/post/about">关于</a>
+        
+        
+    </nav>
+    <div class="drawer-sep"></div>
+    
+    <button type="button" class="drawer-item" id="drawer-search-trigger">
+        <span class="icon">⌕</span> 搜索文章与标签
+    </button>
+    
+    <div class="drawer-item drawer-music">
+        
+        <iframe class="music-frame" frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=1309394512&auto=0&height=66"></iframe>
+    </div>
+</div>
 
 
         <div class="main">

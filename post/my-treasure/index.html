@@ -22,10 +22,6 @@
     
 
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="/styles/main.css">
 
     
@@ -89,17 +85,6 @@
     <div class="reading-progress" id="reading-progress"></div>
     
 
-    
-    <div class="pale-dust" aria-hidden="true">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-    </div>
-
-    
-    <div class="bg-scene" id="bg-scene" aria-hidden="true"
-         data-mode="random"
-         data-image=""></div>
-
     <div class="layout">
         
 <aside class="sidebar">
@@ -141,7 +126,7 @@
     
     <div class="music-player">
         <span class="music-title">空洞骑士主题曲</span>
-        <iframe class="music-frame" frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1309394512&auto=1&height=66"></iframe>
+        <iframe class="music-frame" frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=1309394512&auto=1&height=66" allow="autoplay; encrypted-media"></iframe>
     </div>
 </aside>
 
@@ -176,30 +161,14 @@
 
 <section class="comments-section" id="comments">
     <h3 class="comments-title">评论</h3>
-
-    
-        
-            
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-  var gitalk = new Gitalk({
-    clientID: '',
-    clientSecret: '',
-    repo: '',
-    owner: '',
-    admin: [''],
-    id: (location.pathname).substring(0, 49),
-    distractionFreeMode: false
-  });
-  gitalk.render('gitalk-container');
-</script>
-
-        
-    
+    <div id="gridea-comments" data-gridea-comments="true"
+         data-post-id="M2saD2"
+         data-post-link="/post/my-treasure/"
+         data-post-title="My Treasure">
+        <div class="comments-placeholder">
+            评论由 Gridea Pro 评论服务驱动。请在 Gridea「服务集成」开启 Gitalk / Disqus / Waline 等服务后，此处自动渲染评论区。
+        </div>
+    </div>
 </section>
 
 

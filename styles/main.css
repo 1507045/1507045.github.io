@@ -19,10 +19,10 @@
   --accent-2: #e8c56a;          /* 幼虫金（点缀） */
   --glow: rgba(230, 225, 213, .30);
 
-  /* 深渊（暗色）默认 */
-  --bg: #0a0c12;
-  --bg-soft: #10131c;
-  --bg-hover: #171b27;
+  /* 深渊（暗色）默认：纯黑背景 */
+  --bg: #000000;
+  --bg-soft: #0b0c0f;
+  --bg-hover: #14161b;
   --border: rgba(160, 170, 190, .14);
   --border-strong: rgba(160, 170, 190, .26);
   --text: #e8e6df;
@@ -123,85 +123,6 @@ button { font-family: inherit; cursor: pointer; }
 input { font-family: inherit; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-/* ── 苍白之尘（圣巢·飘落的尘埃） ────────────────────────── */
-.pale-dust {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-.pale-dust span {
-  position: absolute;
-  top: -12px;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0 6px 1px var(--glow);
-  opacity: 0;
-  animation: dust-fall linear infinite;
-}
-.pale-dust span:nth-child(3n) { background: var(--accent-2); }   /* 淡金尘埃 */
-.pale-dust span:nth-child(1) { left: 7%;  animation-duration: 16s; animation-delay: 0s; }
-.pale-dust span:nth-child(2) { left: 17%; width: 1px; height: 1px; animation-duration: 21s; animation-delay: 3s; }
-.pale-dust span:nth-child(3) { left: 28%; animation-duration: 18s; animation-delay: 6s; }
-.pale-dust span:nth-child(4) { left: 39%; width: 1px; height: 1px; animation-duration: 23s; animation-delay: 1s; }
-.pale-dust span:nth-child(5) { left: 53%; animation-duration: 17s; animation-delay: 8s; }
-.pale-dust span:nth-child(6) { left: 64%; width: 3px; height: 3px; animation-duration: 22s; animation-delay: 4s; }
-.pale-dust span:nth-child(7) { left: 77%; width: 1px; height: 1px; animation-duration: 19s; animation-delay: 10s; }
-.pale-dust span:nth-child(8) { left: 89%; animation-duration: 24s; animation-delay: 5s; }
-
-@keyframes dust-fall {
-  0%   { transform: translateY(0) translateX(0) scale(1);   opacity: 0; }
-  8%   { opacity: .8; }
-  50%  { transform: translateY(52vh) translateX(-16px) scale(.9); opacity: .5; }
-  100% { transform: translateY(110vh) translateX(20px) scale(.7); opacity: 0; }
-}
-
-/* ── 圣巢背景图（Ken Burns 动画） ─────────────────────────── */
-.bg-scene {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1.4s ease;
-  will-change: transform;
-}
-.bg-scene.is-visible { opacity: 1; }
-/* 遮罩：保证前景内容可读，明暗主题各自适配 */
-.bg-scene::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(5, 7, 12, .55);
-}
-:root[data-theme="light"] .bg-scene::after { background: rgba(242, 239, 232, .68); }
-
-/* 7 种运镜变体：对应七款菜单主题图，缓慢缩放 / 平移，循环往复 */
-.bg-scene[data-kb="0"] { animation: kb-zoom-in 30s ease-in-out infinite alternate; }
-.bg-scene[data-kb="1"] { animation: kb-pan-rt 36s ease-in-out infinite alternate; }
-.bg-scene[data-kb="2"] { animation: kb-pan-lt 32s ease-in-out infinite alternate; }
-.bg-scene[data-kb="3"] { animation: kb-zoom-out 40s ease-in-out infinite alternate; }
-.bg-scene[data-kb="4"] { animation: kb-pan-down 34s ease-in-out infinite alternate; }
-.bg-scene[data-kb="5"] { animation: kb-zoom-in-2 28s ease-in-out infinite alternate; }
-.bg-scene[data-kb="6"] { animation: kb-diagonal 38s ease-in-out infinite alternate; }
-
-@keyframes kb-zoom-in   { from { transform: scale(1); } to { transform: scale(1.12) translate(1.2%, .8%); } }
-@keyframes kb-pan-rt    { from { transform: scale(1.1) translate(-2%, 0); } to { transform: scale(1.04) translate(1.5%, 0); } }
-@keyframes kb-pan-lt    { from { transform: scale(1.1) translate(2%, 0); } to { transform: scale(1.04) translate(-1.5%, 0); } }
-@keyframes kb-zoom-out  { from { transform: scale(1.1); } to { transform: scale(1); } }
-@keyframes kb-pan-down  { from { transform: scale(1.1) translate(0, -2%); } to { transform: scale(1.03) translate(0, 1.5%); } }
-@keyframes kb-zoom-in-2 { from { transform: scale(1.02); } to { transform: scale(1.14) translate(-1%, -1%); } }
-@keyframes kb-diagonal  { from { transform: scale(1.08) translate(-1.5%, -1%); } to { transform: scale(1.08) translate(1.5%, 1%); } }
-
-@media (prefers-reduced-motion: reduce) {
-  .bg-scene { animation: none !important; }
-}
 
 /* ── 布局 ────────────────────────────────────────────────── */
 .layout { position: relative; z-index: 1; }
@@ -984,11 +905,6 @@ input { font-family: inherit; }
   font-size: 30px;
   color: var(--accent);
   margin-top: 8px;
-  animation: pulse-glow 2.4s ease-in-out infinite;
-}
-@keyframes pulse-glow {
-  0%, 100% { opacity: .4; text-shadow: 0 0 8px var(--glow); }
-  50% { opacity: 1; text-shadow: 0 0 22px var(--glow); }
 }
 .notfound-msg {
   margin-top: 16px;

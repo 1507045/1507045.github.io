@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-accent="soul">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -7,42 +8,58 @@
 
     <meta name="generator" content="Gridea Pro 1.2.2">
     <title>闪念 · 工具人ya的blog~</title>
+
     
     <meta name="description" content="">
     
 
-    
     <meta property="og:site_name" content="工具人ya的blog~">
     <meta property="og:type" content="article">
     <meta property="og:title" content="">
     <meta property="og:description" content="">
+    
     <meta property="og:image" content="/images/avatar.png">
+    
     <meta name="twitter:card" content="summary_large_image">
 
     
 
     
+    <link rel="alternate" type="application/atom+xml" title="工具人ya的blog~" href="/atom.xml">
+    
+
     <link rel="stylesheet" href="/styles/main.css">
 
     
-    <script>
-    (function () {
-      try {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      } catch (e) {}
-      try {
-        document.documentElement.setAttribute('data-accent', "soul");
-        var accent = "#2bbc8a";
-        if (accent) {
-          document.documentElement.style.setProperty('--accent', accent);
-          document.documentElement.style.setProperty('--accent-strong', accent);
-        }
-      } catch (e) {}
-    })();
-    </script>
+    <style>
+    [data-accent="pale"] {
+      --accent: #c4b998;
+      --accent-strong: #d4cfc0;
+      --accent-glow: rgba(196,185,152,.2);
+    }
+    [data-accent="soul"] {
+      --accent: #85c8f2;
+      --accent-strong: #a3d8ff;
+      --accent-glow: rgba(133,200,242,.25);
+    }
+    [data-accent="lifeblood"] {
+      --accent: #6ec6f5;
+      --accent-strong: #99dafb;
+      --accent-glow: rgba(110,198,245,.25);
+    }
+    [data-accent="grub"] {
+      --accent: #f0c060;
+      --accent-strong: #f5d080;
+      --accent-glow: rgba(240,192,96,.25);
+    }
+    </style>
 
     
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8c9d58bb-be79-41ec-b5f0-fe26ad2bdf5e"></script>
+    
+
+    
+
     
 <meta name="description" content="Welcome to My Blog">
 <link rel="canonical" href="https://gjry.eu.org/memos/">
@@ -70,23 +87,19 @@
 <meta name="msapplication-TileImage" content="/images/icons/icon-192x192.png">
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}</script>
 </head>
-<body class="">
-
-    
-    
-    <div class="reading-progress" id="reading-progress"></div>
-    
-
+<body class="memos">
     <div class="layout">
         
 <aside class="sidebar">
     <a class="sidebar-logo" href="/">
+        
+        <img class="logo-img" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" alt="工具人ya的blog~">
+        
+        <span class="logo-text">工具人ya的blog~</span>
+    </a>
     
-    <img class="logo-img" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" alt="工具人ya的blog~">
-    
-    <span class="logo-text">工具人ya的blog~</span>
-</a>
     <p class="sidebar-subtitle">圣巢 · Hallownest</p>
+    
 
     <nav class="sidebar-nav" aria-label="站点导航">
         
@@ -106,26 +119,29 @@
 
     <div class="sidebar-actions">
         
-        <button type="button" class="sidebar-btn" id="search-trigger">
-            <span class="icon">⌕</span> 搜索文章与标签
+        <button type="button" class="sidebar-btn" id="search-trigger" aria-label="打开搜索">
+            <span class="icon">⌕</span> 搜索
         </button>
+        
+        
         
     </div>
 
     
     <div class="music-player">
-        <iframe class="music-frame" loading="lazy" frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=1309394512&auto=0&height=66"></iframe>
+        <iframe class="music-frame" loading="lazy" frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=1309394512&auto=0&height=66" title="空洞骑士主题曲"></iframe>
     </div>
+    
 </aside>
 
 
-<div class="topbar">
+<div class="topbar" id="topbar">
     <a class="topbar-logo" href="/">
-    
-    <img class="logo-img" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" alt="工具人ya的blog~">
-    
-    <span class="logo-text">工具人ya的blog~</span>
-</a>
+        
+        <img class="logo-img" src="https://cdn.jsdelivr.net/gh/1507045/1507045.github.io.image@main/images/avatar.png" alt="工具人ya的blog~">
+        
+        <span class="logo-text">工具人ya的blog~</span>
+    </a>
     <button type="button" class="topbar-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
@@ -156,122 +172,97 @@
         <span class="icon">⌕</span> 搜索文章与标签
     </button>
     
+    
     <div class="drawer-item drawer-music">
-        
-        <iframe class="music-frame" loading="lazy" frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=1309394512&auto=0&height=66"></iframe>
+        <iframe class="music-frame" loading="lazy" frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=1309394512&auto=0&height=66" title="空洞骑士主题曲"></iframe>
     </div>
+    
 </div>
 
 
-        <div class="main">
+        <main class="main">
             <div class="container">
                 
-<h1 class="paper-title">闪念</h1>
-<p class="paper-subtitle">旅途中的零碎片段，在圣巢中留下回响</p>
-
-
-<div class="memo-list">
+<h1 class="page-title">闪念</h1>
+<p class="page-desc">不成章的碎片思绪</p>
+<div class="memos-list">
     
-    <div class="memo-item">
+    
+    <article class="memo-card">
+        <time class="memo-date">2026-07-05</time>
         <div class="memo-content"><p>“不吃学习的苦，就吃生活的苦&quot;<br />
 这句话本身就很片面的思想，倘若你是：1.没有吃学习的苦，也不用吃生活的苦；2.吃了学习的苦，但也吃了生活的苦；听到的人都会感觉这句话很难去接受，从而去批评观点的提出者。<br />
 但这不应该是用于批评一位生活在贫穷家庭的高中女生的话<br />
 #人生感悟</p>
 </div>
-        
-        <div class="memo-tags">
-            <span class="memo-tag">人生感悟</span>
-        </div>
-        
-        <div class="memo-meta">2026-07-05</div>
-    </div>
+    </article>
     
-    <div class="memo-item">
+    <article class="memo-card">
+        <time class="memo-date">2026-06-09</time>
         <div class="memo-content"><p>不停留于已流失的过去 不迷恋于不存在的现在 不惧怕于充满苦难的未来<br />
 &ndash;《RE0:从零开始异世界》</p>
 </div>
-        
-        <div class="memo-meta">2026-06-09</div>
-    </div>
+    </article>
     
-    <div class="memo-item">
+    <article class="memo-card">
+        <time class="memo-date">2026-05-23</time>
         <div class="memo-content"><p>我忘记了所有悲剧，看到的都是奇迹……<br />
 &ndash;《空洞骑士》奎若</p>
 </div>
-        
-        <div class="memo-meta">2026-05-23</div>
-    </div>
+    </article>
     
-    <div class="memo-item">
+    <article class="memo-card">
+        <time class="memo-date">2026-04-12</time>
         <div class="memo-content"><p>它长大之后就会失去飞行的能力。大家总是为成年而欣喜，但随着时光流逝，我们才会发现自己失去了什么。<br />
 ————《空洞骑士》螳螂青年</p>
 </div>
-        
-        <div class="memo-meta">2026-04-12</div>
-    </div>
+    </article>
     
-    <div class="memo-item">
+    <article class="memo-card">
+        <time class="memo-date">2026-04-06</time>
         <div class="memo-content"><p>开了这个博客。不知道能坚持多久，但至少今天，我开始了。</p>
 <p>#日常 #里程碑</p>
 </div>
-        
-        <div class="memo-tags">
-            <span class="memo-tag">日常</span><span class="memo-tag">里程碑</span>
-        </div>
-        
-        <div class="memo-meta">2026-04-06</div>
-    </div>
+    </article>
     
-    <div class="memo-item">
+    <article class="memo-card">
+        <time class="memo-date">2026-04-06</time>
         <div class="memo-content"><p>有些话，发朋友圈怕矫情，发微博怕没人看，跟朋友说怕打扰。<br />
 放在自己的博客里刚刚好——说了，但没有打扰任何人。</p>
 </div>
-        
-        <div class="memo-meta">2026-04-06</div>
-    </div>
+    </article>
     
-    <div class="memo-item">
+    <article class="memo-card">
+        <time class="memo-date">2026-04-06</time>
         <div class="memo-content"><p>翻到两年前写的一段话，完全不记得当时为什么写。但那个情绪，隔着屏幕都能感觉到。<br />
 幸好当时写下来了。不然这段经历就真的不存在了。</p>
 <p>#记忆</p>
 </div>
-        
-        <div class="memo-tags">
-            <span class="memo-tag">记忆</span>
-        </div>
-        
-        <div class="memo-meta">2026-04-06</div>
-    </div>
+    </article>
     
-    <div class="memo-item">
+    <article class="memo-card">
+        <time class="memo-date">2026-04-06</time>
         <div class="memo-content"><p>今天什么也没写。但打开了编辑器，看了一会儿光标在那里闪。<br />
 这也算一种开始吧。</p>
 </div>
-        
-        <div class="memo-meta">2026-04-06</div>
-    </div>
+    </article>
     
-    <div class="memo-item">
+    <article class="memo-card">
+        <time class="memo-date">2026-04-06</time>
         <div class="memo-content"><p>有个事困扰了我好几天，今晚试着写下来，写着写着突然就不纠结了。<br />
 文字虽然没给我答案，但这个事情仿佛已经不重要了。</p>
 <p>#随想</p>
 </div>
-        
-        <div class="memo-tags">
-            <span class="memo-tag">随想</span>
-        </div>
-        
-        <div class="memo-meta">2026-04-06</div>
-    </div>
+    </article>
+    
     
 </div>
 
+            </div>
 
-                
+            
 <footer class="content-footer">
-    <div>
-        &copy; 2026 工具人ya的blog~
-         · <span class="footer-info"><!-- 本站运行时间 -->
+    &copy; 2026 工具人ya的blog~ · <!-- 本站运行时间 -->
 <i class="fa fa-cog fa-spin fa-1x fa-fw"></i><!--动态齿轮图标-->
 <span>本站已运行 <span id="days" style="font-weight:800; color:#ED712E;"> </span> 天</span>
 <script>
@@ -281,19 +272,15 @@
   let days = s2.getTime() - s1.getTime();
   let number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
   document.getElementById('days').innerHTML = number_of_days;
-</script></span>
-        · Powered by <a href="https://gridea.dev" target="_blank" rel="noopener">Gridea Pro</a>
-    </div>
+</script> · Powered by <a href="https://gridea.dev" target="_blank" rel="noopener">Gridea Pro</a>
 </footer>
 
-            </div>
-        </div>
+        </main>
     </div>
 
     
     
-
-<script id="pf-search-data" type="application/json">
+<script id="hk-search-data" type="application/json">
 {
   "posts": [
     {
@@ -453,25 +440,56 @@
       "excerpt": "给我无语死了，班主任说找不到幕后真凶，全班跑5天，她自己跑两倍。结果她自己真正的只跑了2Day（单押了，我真棒！），我们也只真正的跑了4天，还说班上有了凝聚力。我就想问了，怎么说的凝聚力，这很扯啊。\n然后我在周三的时候在CSZ对面吃饭！！！啊！！！！这吃饭多是一件美事啊~\n（虽然但是，怎么看都有点变态了，在此声明：我应...",
       "tags": ["周记"]
     }
+  ],
+  "tags": [
+    {
+      "name": "Gridea",
+      "link": "/tag/gridea/",
+      "count": 1
+    },{
+      "name": "Gridea Pro",
+      "link": "/tag/gridea-pro/",
+      "count": 5
+    },{
+      "name": "入门",
+      "link": "/tag/getting-started/",
+      "count": 1
+    },{
+      "name": "周记",
+      "link": "/tag//Weekly_Journal/",
+      "count": 18
+    }
   ]
 }
 </script>
 
-
     
-<div class="search-mask" id="search-mask" hidden>
-    <div class="search-modal" role="dialog" aria-modal="true" aria-label="站内搜索">
-        <div class="search-head">
-            <input id="search-input" type="search" placeholder="在圣巢中寻觅…" autocomplete="off" aria-label="搜索关键词">
-            <button type="button" class="search-close" id="search-close" aria-label="关闭">✕</button>
+<div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="站内搜索">
+    <div class="search-modal-bg" id="search-mask"></div>
+    <div class="search-modal-content">
+        <div class="search-input-wrapper">
+            <svg class="search-icon" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M6.5 2a4.5 4.5 0 1 1 0 9A4.5 4.5 0 0 1 6.5 2zm0 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"></path>
+                <path d="M10.4 10.4a.75.75 0 0 1 1.06 0l2.3 2.3a.75.75 0 1 1-1.06 1.06l-2.3-2.3a.75.75 0 0 1 0-1.06z"></path>
+            </svg>
+            <input type="search" id="search-input" class="search-input" placeholder="在圣巢的卷轴中搜索…" autocomplete="off" spellcheck="false" aria-label="搜索关键词">
+            <button type="button" class="search-close" id="search-close" aria-label="关闭搜索">&times;</button>
         </div>
-        <div class="search-results" id="search-results"></div>
+        <div class="search-results" id="search-results" role="listbox" aria-label="搜索结果">
+            <p class="search-empty">输入关键词，探寻圣巢的往昔</p>
+        </div>
+        <div class="search-shortcuts">
+            <span><kbd>↵</kbd> 进入</span>
+            <span><kbd>↑</kbd><kbd>↓</kbd> 选择</span>
+            <span><kbd>esc</kbd> 关闭</span>
+        </div>
     </div>
 </div>
 
     
 
     <script src="/scripts/main.js" defer></script>
+
     
 <script>console.log("\n%c ✦ Gridea Pro v1.2.2 %c · Theme: AI_create v1.0.0 · https://gridea.pro %c\n","color:#fadfa3;background:#111111;padding:9px 14px;border-radius:4px 0 0 4px;font-weight:500;font-size:12px","color:#e05c00;background:#fff3ec;padding:9px 14px;border-radius:0 4px 4px 0;font-size:11px","")</script>
 </body>

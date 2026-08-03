@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#000000"/>
+  <text x="600" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="64" font-weight="bold" fill="#c4b998" letter-spacing="12">HALLOWNEST</text>
+  <text x="600" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#8a8578" letter-spacing="8">圣  巢</text>
+  <text x="600" y="460" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#5c5850" letter-spacing="4">✦ 空洞骑士风格博客主题 ✦</text>
+  <line x1="400" y1="500" x2="800" y2="500" stroke="#2a2720" stroke-width="1"/>
+  <text x="600" y="550" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#4a4640">Higher beings, these words are for you alone</text>
+</svg>

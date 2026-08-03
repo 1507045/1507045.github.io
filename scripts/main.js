@@ -1,4 +1,4 @@
-/* Hallownest · 圣巢 — 主题切换 / 站内搜索 / 阅读进度条 */
+/* Hallownest · 圣巢 — 主题交互：汉堡菜单 / 搜索 */
 (function () {
   'use strict';
 
@@ -6,147 +6,199 @@
   var navBtn = document.getElementById('nav-toggle');
   var drawer = document.getElementById('top-drawer');
   if (navBtn && drawer) {
-    var topbar = document.querySelector('.topbar');
-    /* 抽屉顶部对齐顶栏底部（顶栏实际高度由内容决定） */
+    var topbar = document.getElementById('topbar');
+    /* 创建遮罩层，初始隐藏 */
+    var backdrop = document.createElement('div');
+    backdrop.className = 'drawer-backdrop';
+    backdrop.setAttribute('aria-hidden', 'true');
+    backdrop.hidden = true;
+    drawer.parentNode.insertBefore(backdrop, drawer);
+
     function setDrawerPos() {
       if (!topbar) return;
       drawer.style.top = topbar.offsetHeight + 'px';
       drawer.style.maxHeight = 'calc(100vh - ' + topbar.offsetHeight + 'px)';
     }
+    function openDrawer() {
+      setDrawerPos();
+      drawer.hidden = false;
+      backdrop.hidden = false;
+      navBtn.classList.add('is-open');
+      navBtn.setAttribute('aria-expanded', 'true');
+      if (topbar) topbar.classList.add('is-menu-open');
+    }
     function closeDrawer() {
       drawer.hidden = true;
+      backdrop.hidden = true;
       navBtn.classList.remove('is-open');
       navBtn.setAttribute('aria-expanded', 'false');
       if (topbar) topbar.classList.remove('is-menu-open');
     }
     navBtn.addEventListener('click', function () {
-      if (drawer.hidden) {
-        setDrawerPos();
-        drawer.hidden = false;
-        navBtn.classList.add('is-open');
-        navBtn.setAttribute('aria-expanded', 'true');
-        if (topbar) topbar.classList.add('is-menu-open');
-      } else {
-        closeDrawer();
-      }
+      if (drawer.hidden) openDrawer();
+      else closeDrawer();
     });
+    /* 点击抽屉内的链接或按钮 → 关闭 */
     drawer.addEventListener('click', function (e) {
       if (e.target.closest('a, button')) closeDrawer();
     });
+    /* 点击遮罩层 → 关闭 */
+    backdrop.addEventListener('click', closeDrawer);
   }
 
-  /* ── 阅读进度条（仅文章页） ── */
-  var bar = document.getElementById('reading-progress');
-  if (bar && document.body.classList.contains('post-page')) {
-    var ticking = false;
-    window.addEventListener('scroll', function () {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(function () {
-        var doc = document.documentElement;
-        var max = doc.scrollHeight - window.innerHeight;
-        bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
-        ticking = false;
-      });
-    }, { passive: true });
+  /* ── 外链：新标签页打开（全站范围） ── */
+  var allLinks = document.querySelectorAll('a[href^="http"]');
+  for (var i = 0; i < allLinks.length; i++) {
+    if (allLinks[i].hostname !== location.hostname) {
+      allLinks[i].setAttribute('target', '_blank');
+      allLinks[i].setAttribute('rel', 'noopener noreferrer');
+    }
   }
 
-  /* ── 站内搜索 ── */
-  var mask = document.getElementById('search-mask');
-  var input = document.getElementById('search-input');
-  var resultsEl = document.getElementById('search-results');
-  var dataEl = document.getElementById('pf-search-data');
-  var index = null;
+  /* ── 全站搜索 ── */
+  var searchModal = document.getElementById('search-modal');
+  var searchMask = document.getElementById('search-mask');
+  var searchInput = document.getElementById('search-input');
+  var searchResults = document.getElementById('search-results');
+  var searchClose = document.getElementById('search-close');
 
-  function getIndex() {
-    if (index) return index;
+  if (searchModal && searchInput && searchResults) {
+    /* 索引：从内联 <script id="hk-search-data"> 读取 */
+    var searchIndex = { posts: [], tags: [] };
+    var dataEl = document.getElementById('hk-search-data');
     if (dataEl) {
-      try { index = JSON.parse(dataEl.textContent); } catch (e) { index = { posts: [] }; }
-    } else {
-      index = { posts: [] };
+      try { searchIndex = JSON.parse(dataEl.textContent); } catch (e) {}
     }
-    return index;
-  }
 
-  function escapeHtml(s) {
-    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    function openSearch() {
+      searchModal.classList.add('is-open');
+      searchInput.focus();
+      searchInput.value = '';
+      renderSearch();
+    }
+    function closeSearchFn() {
+      searchModal.classList.remove('is-open');
+    }
+
+    /* 搜索绑定的三个入口 */
+    var trigger = document.getElementById('search-trigger');
+    var drawerSearch = document.getElementById('drawer-search-trigger');
+    if (trigger) trigger.addEventListener('click', openSearch);
+    if (drawerSearch) drawerSearch.addEventListener('click', openSearch);
+    if (searchClose) searchClose.addEventListener('click', closeSearchFn);
+    if (searchMask) searchMask.addEventListener('click', closeSearchFn);
+
+    /* 事件委托：点击搜索结果项 → 关闭弹窗 */
+    searchResults.addEventListener('click', function (e) {
+      var item = e.target.closest('.search-result-item');
+      if (item) closeSearchFn();
     });
-  }
 
-  function highlight(text, kw) {
-    var safe = /[.*+?^${}()|[\]\\]/.test(kw) ? kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') : kw;
-    var re = new RegExp('(' + safe + ')', 'gi');
-    return escapeHtml(text).replace(re, '<mark>$1</mark>');
-  }
+    /* 键盘快捷键 Ctrl/Cmd+K */
+    document.addEventListener('keydown', function (e) {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        if (searchModal.classList.contains('is-open')) closeSearchFn();
+        else openSearch();
+      }
+      if (e.key === 'Escape' && searchModal.classList.contains('is-open')) {
+        closeSearchFn();
+      }
+    });
 
-  function openSearch() {
-    if (!mask) return;
-    mask.hidden = false;
-    if (input) {
-      input.value = '';
-      setTimeout(function () { input.focus(); }, 30);
+    /* 实时搜索 */
+    var activeIdx = -1;
+    var lastResults = [];
+
+    function highlight(text, q) {
+      var escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      var re = new RegExp('(' + escaped + ')', 'gi');
+      return text.replace(re, '<mark>$1</mark>');
     }
-    render('');
-  }
 
-  function closeSearch() {
-    if (mask) mask.hidden = true;
-  }
-
-  function render(q) {
-    if (!resultsEl) return;
-    var idx = getIndex();
-    var posts = idx.posts || [];
-    q = (q || '').trim();
-    if (!q) {
-      resultsEl.innerHTML = '<div class="search-empty">输入关键词，在圣巢中寻觅文章与标签</div>';
-      return;
-    }
-    var kw = q.toLowerCase();
-    var hits = [];
-    for (var i = 0; i < posts.length; i++) {
-      var p = posts[i];
-      var inTitle = p.title && p.title.toLowerCase().indexOf(kw) !== -1;
-      var inExcerpt = p.excerpt && p.excerpt.toLowerCase().indexOf(kw) !== -1;
-      var inTags = false;
-      if (p.tags) {
-        for (var j = 0; j < p.tags.length; j++) {
-          if (String(p.tags[j]).toLowerCase().indexOf(kw) !== -1) { inTags = true; break; }
+    function renderSearch() {
+      var q = searchInput.value.trim().toLowerCase();
+      var resultsEl = searchResults;
+      if (!q) {
+        resultsEl.innerHTML = '<p class="search-empty">输入关键词，探寻圣巢的往昔</p>';
+        lastResults = [];
+        activeIdx = -1;
+        return;
+      }
+      var hits = [];
+      for (var i = 0; i < searchIndex.posts.length; i++) {
+        var p = searchIndex.posts[i];
+        var score = 0;
+        if (p.title.toLowerCase().indexOf(q) !== -1) score += 10;
+        var tags = (p.tags || []).join(' ').toLowerCase();
+        if (tags.indexOf(q) !== -1) score += 6;
+        var excerpt = (p.excerpt || '').toLowerCase();
+        if (excerpt.indexOf(q) !== -1) score += 4;
+        if (score > 0) {
+          hits.push({ post: p, score: score });
         }
       }
-      if (inTitle || inExcerpt || inTags) hits.push(p);
-    }
-    if (!hits.length) {
-      resultsEl.innerHTML = '<div class="search-empty">在圣巢的暗渊中，未能找到「' + escapeHtml(q) + '」</div>';
-      return;
-    }
-    var html = '';
-    for (var k = 0; k < hits.length; k++) {
-      var item = hits[k];
-      var title = item.title ? highlight(item.title, q) : '';
-      var excerpt = item.excerpt ? highlight(item.excerpt, q).slice(0, 120) : '';
-      html += '<a class="search-result" href="' + escapeHtml(item.link) + '">' +
-        '<div class="search-result-title">' + title + '</div>' +
-        (excerpt ? '<div class="search-result-excerpt">' + excerpt + '</div>' : '') +
-        (item.date ? '<div class="search-result-date">' + escapeHtml(item.date) + '</div>' : '') +
-        '</a>';
-    }
-    resultsEl.innerHTML = html;
-  }
+      /* 也搜标签名 */
+      for (var t = 0; t < searchIndex.tags.length; t++) {
+        var tag = searchIndex.tags[t];
+        if (tag.name.toLowerCase().indexOf(q) !== -1) {
+          hits.push({ post: { title: '◆ 标签：' + tag.name, link: tag.link, date: tag.count + ' 篇', tags: [], excerpt: '' }, score: 3 });
+        }
+      }
+      hits.sort(function (a, b) { return b.score - a.score; });
+      lastResults = hits;
 
-  var trigger = document.getElementById('search-trigger');
-  var drawerSearch = document.getElementById('drawer-search-trigger');
-  var closeBtn = document.getElementById('search-close');
-  if (trigger) trigger.addEventListener('click', openSearch);
-  if (drawerSearch) drawerSearch.addEventListener('click', openSearch);
-  if (closeBtn) closeBtn.addEventListener('click', closeSearch);
-  if (mask) {
-    mask.addEventListener('click', function (e) { if (e.target === mask) closeSearch(); });
+      if (hits.length === 0) {
+        resultsEl.innerHTML = '<p class="search-empty">圣巢的卷轴中未找到与此相关的记录</p>';
+        activeIdx = -1;
+        return;
+      }
+
+      var html = '';
+      for (var j = 0; j < hits.length; j++) {
+        var hp = hits[j].post;
+        var titleHl = highlight(hp.title, q);
+        var dateStr = hp.date || '';
+        var tagStr = (hp.tags || []).length > 0 ? ' ◆ ' + hp.tags.join(' ◆ ') : '';
+        html += '<a href="' + hp.link + '" class="search-result-item" data-idx="' + j + '">' +
+          '<span class="search-result-title">' + titleHl + '</span>' +
+          '<span class="search-result-meta">' + dateStr + tagStr + '</span>' +
+        '</a>';
+      }
+      resultsEl.innerHTML = html;
+      activeIdx = -1;
+    }
+
+    searchInput.addEventListener('input', renderSearch);
+
+    /* 键盘导航（上下箭头 + Enter） */
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (lastResults.length === 0) return;
+        activeIdx = Math.min(activeIdx + 1, lastResults.length - 1);
+        highlightActive();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (lastResults.length === 0) return;
+        activeIdx = Math.max(activeIdx - 1, 0);
+        highlightActive();
+      } else if (e.key === 'Enter') {
+        if (activeIdx >= 0 && activeIdx < lastResults.length) {
+          e.preventDefault();
+          window.location.href = lastResults[activeIdx].post.link;
+        }
+      }
+    });
+
+    function highlightActive() {
+      var items = searchResults.querySelectorAll('.search-result-item');
+      for (var i = 0; i < items.length; i++) {
+        items[i].classList.toggle('is-active', i === activeIdx);
+      }
+      if (activeIdx >= 0 && items[activeIdx]) {
+        items[activeIdx].scrollIntoView({ block: 'nearest' });
+      }
+    }
   }
-  document.addEventListener('keydown', function (e) {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
-    if (e.key === 'Escape') closeSearch();
-  });
-  if (input) input.addEventListener('input', function () { render(input.value); });
 })();
